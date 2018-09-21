@@ -3,6 +3,8 @@ body {
   padding: 0;
   font-family: sans-serif;
   background-image: linear-gradient(to right top, #2e4db2, #0086c7, #2eb2bc, #a7d5bf, #f4f7eb);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 
