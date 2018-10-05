@@ -5,7 +5,7 @@ class Button extends Component
     render(){
         return(
             <div>
-                <button type = "button" className = "btn btn-success btn-lg">Sign in</button> 
+                <button type = "button" className = "btn btn-success btn-lg">{this.props.text}</button> 
             </div>
         );
         
