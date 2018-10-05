@@ -6,3 +6,19 @@ form label{
 #width1{
     width: 300px;
 }
+
+.login-wrapper {
+    margin: 100px 400px;
+    padding: 10px;
+}
+
+img {
+    width: 250px;
+    height: 200px;
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+
+#login-btn {
+    margin-left: 130px;
+}
