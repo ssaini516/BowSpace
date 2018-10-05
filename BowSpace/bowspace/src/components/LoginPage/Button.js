@@ -5,7 +5,8 @@ class Button extends Component
     render(){
         return(
             <div>
-                <button id="login-btn" className = "btn btn-success">Sign in</button> 
+                <button id="login-btn" className = "btn btn-success">Sign in <i class="fa fa-sign-in" aria-hidden="true"></i>
+</button> 
             </div>
         );
         
