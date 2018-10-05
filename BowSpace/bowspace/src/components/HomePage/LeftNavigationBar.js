@@ -21,7 +21,7 @@ class LeftNavigationBar extends Component {
                 <div class = "col-sm-8">
                     <Button text ="search"/>
                 </div>
-            </div>>
+            </div>
         </div>
       );
     }
