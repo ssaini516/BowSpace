@@ -9,6 +9,8 @@ class App extends Component {
     return (
       <div className="App">
         <LoginWrapper />
+
+        <LeftNavigationBar />
       </div>
     );
   }

@@ -12,7 +12,6 @@ const LoginWrapper = () => {
         <div className="login-wrapper">
             <ImageLogin />
             <LoginForm />
-            <LeftNavigationBar />
             <Button />
         </div>
     );
