@@ -2,6 +2,7 @@ import React from 'react';
 import ImageLogin from './ImageLogin.js';
 import LoginForm from './LoginForm.js';
 import Button from './Button.js';
+import { Link } from 'react-router-dom';
 import './Loggin-page.css';
 
 
@@ -11,7 +12,9 @@ const LoginWrapper = () => {
         <div className="login-wrapper">
             <ImageLogin />
             <LoginForm />
-            <Button />
+            <Link to="/home">
+                <Button />
+            </Link>        
         </div>
     );
 }
