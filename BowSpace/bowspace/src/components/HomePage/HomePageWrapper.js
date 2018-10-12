@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import LeftNavigationBar from './LeftNavigationBar.js';
 import ListPostsOfUsers from './ListPostsOfUsers.js';
 import CreateButton from './CreateButton.js';
 import Footer from './Footer.js';
+
 
 const HomePageWrapper = () => {
 
@@ -26,7 +28,9 @@ const HomePageWrapper = () => {
                     
                     </div>  
                     <div className="col-md-2 col-lg-2">
-                        <CreateButton />
+                    <Link to="/createPost">
+                            <CreateButton />
+                    </Link>                      
                     </div>  
             </div>   
             <div className="row">
