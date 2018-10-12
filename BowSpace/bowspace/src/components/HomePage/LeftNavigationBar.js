@@ -4,8 +4,8 @@ import Button from '../LoginPage/Button.js';
 class LeftNavigationBar extends Component {
     render() {
       return (
-        <div class="card">
-            <div class="card-header text-white bg-primary">
+        <div id="left-nav" className="card">
+            <div className="card-header text-white bg-primary">
                 User-name
             </div>
             <div class="card-body">
@@ -14,7 +14,7 @@ class LeftNavigationBar extends Component {
                 </div>
                 <a href="#" class="btn btn-primary">search</a>
             </div>
-</div>
+        </div>
       );
     }
   }
