@@ -1,6 +1,8 @@
 import React from 'react';
 import LeftNavigationBar from './LeftNavigationBar.js';
 import ListPostsOfUsers from './ListPostsOfUsers.js';
+import CreateButton from './CreateButton.js';
+import Footer from './Footer.js';
 
 const HomePageWrapper = () => {
 
@@ -17,8 +19,21 @@ const HomePageWrapper = () => {
 
                 <div className="col-md-6 col-lg-7">
                     <ListPostsOfUsers />
-                </div>             
-            </div>           
+                </div>
+            </div> 
+            <div className="row mb-4">
+                <div className="col-md-9 col-lg-9">
+                    
+                    </div>  
+                    <div className="col-md-2 col-lg-2">
+                        <CreateButton />
+                    </div>  
+            </div>   
+            <div className="row">
+                <div className="col-md-6 col-lg-11">
+                    <Footer />
+                </div>   
+            </div>          
         </div>
     );
 }
