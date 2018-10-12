@@ -7,8 +7,6 @@ class LoginForm extends Component {
         return( 
             <div className="wrapper">
                 <form className="container">
-                    <div className="container">
-                    </div>
                     <div className="form-group">
                         <label>Email</label>
                         <input id="width1" type="email" className="form-control" placeholder="Please enter your email"></input>

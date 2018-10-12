@@ -7,15 +7,15 @@ const HomePageWrapper = () => {
     return(
         <div id="home-page-wrapper" className="container-fluid mt-3">
             <div className="row">
-                <div className="col-md-4">
+                <div className="col-md-4 col-lg-3">
                     <LeftNavigationBar />
                 </div>
 
-                <div className="col-md-1">
+                <div className="col-md-1 col-lg-1">
                     
                 </div>
 
-                <div className="col-md-7">
+                <div className="col-md-6 col-lg-7">
                     <ListPostsOfUsers />
                 </div>             
             </div>           
