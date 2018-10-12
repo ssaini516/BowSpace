@@ -1,0 +1,14 @@
+.wrapper-panel{
+    border: 1px solid black;
+    margin: 38%;
+    padding: 10px;
+    background-color: #035ee7;
+
+}
+
+.text-panel{
+    font-family: fantasy;
+    font-size: auto ;
+    color: aliceblue;
+    margin-left: 3.5rem;
+}
