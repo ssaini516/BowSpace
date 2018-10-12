@@ -1,15 +1,22 @@
 import React from 'react';
 import UserPostPanel from './UserPostPanel.js';
+import Scroll from './Scroll.js';
 
 const ListPostsOfUsers = () => {
 
     return(
-        <div className="list-posts-of-users">
-            <UserPostPanel />
-            <UserPostPanel />
-            <UserPostPanel />
-            <UserPostPanel />
+        <div id="list-posts-of-users">
+            <Scroll>
+                <UserPostPanel />
+                <UserPostPanel />
+                <UserPostPanel />
+                <UserPostPanel />
+                <UserPostPanel />
+                <UserPostPanel />
+                <UserPostPanel />
+                <UserPostPanel />
+            </Scroll>            
         </div>
     );
 }
-export default UserPostPanel;
+export default ListPostsOfUsers;

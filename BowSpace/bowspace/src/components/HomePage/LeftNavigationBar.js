@@ -4,23 +4,15 @@ import Button from '../LoginPage/Button.js';
 class LeftNavigationBar extends Component {
     render() {
       return (
-        <div className="left-panel">
-            <div class = "row">
-                <div class = "col-sm-8">
-                    <h2>user name</h2>
-                </div>
+        <div id="left-nav" className="card">
+            <div className="card-header text-white bg-primary">
+                User-name
             </div>
-            <p></p>
-            <div class = "row">
-                <div class = "col-sm-8">
-                    <input type="text" class="form-control" name="search-list" />
+            <div className="card-body">
+                <div className="input-group mb-3">
+                    <input type="text" className="form-control" placeholder="Username"/>
                 </div>
-            </div>
-            <p></p>
-            <div class = "row">
-                <div class = "col-sm-8">
-                    <Button text ="search"/>
-                </div>
+                <a href="#" className="btn btn-primary">search</a>
             </div>
         </div>
       );
