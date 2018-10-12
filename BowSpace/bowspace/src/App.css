@@ -1,26 +1,5 @@
 /*Home Page*/
-/* .card{
-    width: 30%;
-    padding-bottom: 20%;
-} */
 
 h1, label, a , h5, p{
     font-family: 'Acme', sans-serif;
-}
-
-
-#home-page-wrapper {
-    height: auto;
-}
-
-#left-nav {
-    height: 100%;
-    padding-bottom: 500px;
-}
-
-/* Footer */
-#footer{
-    color: #AAA;
-    background: #0B3861 none repeat scroll 0% 0%;
-    padding: 10px 0px;
 }
