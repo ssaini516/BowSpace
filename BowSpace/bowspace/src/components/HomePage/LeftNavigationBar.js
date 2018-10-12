@@ -8,11 +8,11 @@ class LeftNavigationBar extends Component {
             <div className="card-header text-white bg-primary">
                 User-name
             </div>
-            <div class="card-body">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Username"/>
+            <div className="card-body">
+                <div className="input-group mb-3">
+                    <input type="text" className="form-control" placeholder="Username"/>
                 </div>
-                <a href="#" class="btn btn-primary">search</a>
+                <a href="#" className="btn btn-primary">search</a>
             </div>
         </div>
       );
