@@ -15,7 +15,7 @@ class LoginForm extends Component {
                     </div>
                     <div className="form-group">
                         <label>Password</label>
-                        <input id="width1" type="password" className="form-control" placeholder="**********"></input>
+                        <input id="width2" type="password" className="form-control" placeholder="**********"></input>
                     </div>
                 </form> 
             </div>
