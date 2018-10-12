@@ -16,26 +16,26 @@ class PanelPost extends Component {
                     <div className="form-group mb-4 col-12">
                         <div className="input-group-prepend">
                             <div className="input-group-prepend">
-                                <span className="input-group-text">Title</span>
+                                <span className="input-group-text"><i className="fa fa-buysellads"></i> Title</span>
                             </div>
-                            <input className="form-control"></input>
+                            <input className="form-control" required></input>
                         </div>
                     </div>
 
                     <div className="form-group mb-4 col-12">
                         <div className="input-group-prepend">
                             <div className="input-group-prepend">
-                                <span className="input-group-text">Recipient</span>
+                            <span className="input-group-text"><i className="fa fa-user-plus"></i> Receipient</span>
                             </div>
-                            <input className="form-control"></input>
+                            <input className="form-control" required></input>
                         </div> 
                     </div>
 
                     <div class="input-group mb-4 col-12">
                         <div class="input-group-prepend">
-                            <span class="input-group-text">Post content</span>
+                            <span class="input-group-text"><i className="fa fa-comments"></i>Post content</span>
                         </div>
-                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                        <textarea class="form-control" aria-label="With textarea" required></textarea>
                     </div>
                     </div>
                 </div>

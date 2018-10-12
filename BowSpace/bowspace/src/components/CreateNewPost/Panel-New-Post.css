@@ -1,8 +1,8 @@
 #wrapper-panel{
-    border: 1px solid black;
+    border: 0.5 solid black;
     margin: 100px auto;
     width: 400px;
-    background-color: #035ee7;
+    background-color: #0080ff;
 
 }
 
