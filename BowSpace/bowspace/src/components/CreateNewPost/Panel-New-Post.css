@@ -3,12 +3,16 @@
     margin: 100px auto;
     width: 400px;
     background-color: #0080ff;
-
 }
+
 
 #text-panel{
     
     font-size: auto ;
     color: aliceblue;
-    margin-left: 6rem;
+    margin-left: 3.5rem;
+}
+
+#textarea{
+    height: 100px;
 }

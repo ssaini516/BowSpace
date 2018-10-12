@@ -9,7 +9,7 @@ class PanelPost extends Component {
                 <div className="row"> 
                     <div className="form-group mb-3 col-12">
                         <div className="input-group-prepend">
-                            <h1 id="text-panel">Create Post</h1>
+                            <h1 id="text-panel">Create New Post</h1>
                         </div>
                     </div>
 
@@ -31,11 +31,11 @@ class PanelPost extends Component {
                         </div> 
                     </div>
 
-                    <div class="input-group mb-4 col-12">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i className="fa fa-comments"></i>Post content</span>
+                    <div className="input-group mb-4 col-12">
+                        <div className="input-group-prepend">
+                            <span className="input-group-text"><i className="fa fa-comments"></i>Post content</span>
                         </div>
-                        <textarea class="form-control" aria-label="With textarea" required></textarea>
+                        <textarea id="textarea" className="form-control" aria-label="With textarea" required></textarea>
                     </div>
                     </div>
                 </div>
