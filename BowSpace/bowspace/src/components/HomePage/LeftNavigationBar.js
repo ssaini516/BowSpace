@@ -6,7 +6,7 @@ class LeftNavigationBar extends Component {
       return (
         <div id="left-nav" className="card">
             <div className="card-header text-white bg-primary">
-                User-name
+                <h5>User-name</h5>
             </div>
             <div className="card-body">
                 <div className="input-group mb-3">

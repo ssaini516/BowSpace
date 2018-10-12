@@ -4,6 +4,11 @@
     padding-bottom: 20%;
 } */
 
+h1, label, a , h5, p{
+    font-family: 'Acme', sans-serif;
+}
+
+
 #home-page-wrapper {
     height: auto;
 }
