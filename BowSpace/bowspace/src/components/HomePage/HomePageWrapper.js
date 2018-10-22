@@ -31,7 +31,7 @@ const HomePageWrapper = () => {
                     
                 </div>  
 
-                <div className="col-md-2 col-lg-2">
+                <div className="col-md-2 col-lg-2 mt-3">
                     <Link to="/createPost">
                         <Button type="primary">Create New Post</Button>
                     </Link>                      
