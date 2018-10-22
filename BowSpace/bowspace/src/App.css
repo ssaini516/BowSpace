@@ -8,11 +8,9 @@
     height: auto;
 }
 
-#left-nav {
-    height: 100%;
-    padding-bottom: 500px;
+.fa-circle{
+color: green;
 }
-
 /* Footer */
 #footer{
     color: #AAA;

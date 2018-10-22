@@ -13,6 +13,12 @@ class LeftNavigationBar extends Component {
                     <input type="text" className="form-control" placeholder="Username"/>
                 </div>
                 <a href="#" className="btn btn-primary">search</a>
+                <p></p>
+                <ul className ="list-group">
+                    <li className ="list-group-item"><i className ="fa fa-circle"></i> Hai</li>
+                    <li className ="list-group-item"><i className ="fa fa-circle"></i> Sandeep </li>
+                    <li className ="list-group-item"><i className ="fa fa-circle"></i> Pablo </li>
+                </ul>
             </div>
         </div>
       );
