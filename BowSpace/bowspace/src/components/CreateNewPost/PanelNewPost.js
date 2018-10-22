@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from '../Button/Button.js';
+import { Link } from 'react-router-dom';
 import './Panel-New-Post.css';
 
 class PanelPost extends Component {
@@ -46,7 +47,9 @@ class PanelPost extends Component {
                         </div>
                         <div className="col-md-6 mb-3">
                             <Button type="success">Post</Button>
-                            <Button id="btn-cancel" type="danger">Cancel</Button>       
+                            <Link to="/home">
+                                <Button id="btn-cancel" type="danger">Cancel</Button>       
+                            </Link>                         
                         </div>                
                     </div>
                 </div>
