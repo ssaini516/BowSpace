@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Button from '../LoginPage/Button.js';
+import Button from '../Button/Button.js';
 
 class LeftNavigationBar extends Component {
     render() {
@@ -12,7 +12,9 @@ class LeftNavigationBar extends Component {
                 <div className="input-group mb-3">
                     <input type="text" className="form-control" placeholder="Username"/>
                 </div>
-                <a href="#" className="btn btn-primary">search</a>
+
+                <Button type="primary">Search</Button>
+                
                 <p></p>
                 <ul className ="list-group">
                     <li className ="list-group-item"><i className ="fa fa-circle"></i> Hai</li>

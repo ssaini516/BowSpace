@@ -1,6 +1,7 @@
 import React from 'react';
 import PanelPost from './PanelNewPost.js';
 
+
 const PanelPostWrapper = () => {
 
     return(

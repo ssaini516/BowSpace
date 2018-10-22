@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LeftNavigationBar from './LeftNavigationBar.js';
 import ListPostsOfUsers from './ListPostsOfUsers.js';
-import CreateButton from './CreateButton.js';
+import Button from '../Button/Button.js';
 import Footer from './Footer.js';
 import './HomePage.css';
 
@@ -33,7 +33,7 @@ const HomePageWrapper = () => {
 
                 <div className="col-md-2 col-lg-2">
                     <Link to="/createPost">
-                        <CreateButton />
+                        <Button type="primary">Create New Post</Button>
                     </Link>                      
                 </div>  
 
