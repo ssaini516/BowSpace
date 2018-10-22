@@ -1,11 +1,10 @@
-/*Home Page*/
-
 #home-page-wrapper {
     height: auto;
 }
 
-.fa-circle{
-color: green;
+#left-nav {
+    height: 100%;
+    padding-bottom: 500px;
 }
 
 /* Footer */
@@ -13,8 +12,4 @@ color: green;
     color: #AAA;
     background: #0B3861 none repeat scroll 0% 0%;
     padding: 10px 0px;
-}
-
-h1, label, a , h5, p{
-    font-family: 'Acme', sans-serif;
 }
