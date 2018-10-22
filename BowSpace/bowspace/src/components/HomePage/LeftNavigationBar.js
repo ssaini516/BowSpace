@@ -4,7 +4,7 @@ import Button from '../Button/Button.js';
 class LeftNavigationBar extends Component {
     render() {
       return (
-        <div id="left-nav" className="card">
+        <div className="card">
             <div className="card-header text-white bg-primary">
                 <h5>User-name</h5>
             </div>
