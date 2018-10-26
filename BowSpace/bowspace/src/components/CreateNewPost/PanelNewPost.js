@@ -4,6 +4,32 @@ import { Link } from 'react-router-dom';
 import './Panel-New-Post.css';
 
 class PanelPost extends Component {
+    constructor(props){
+        super(props)
+        this.state ={} 
+
+        this.CreateNewPost = this.CreateNewPost.bind(this)
+    }
+    
+    CreateNewPost(){
+        let newPost = {
+            title: "Testing",
+            body: "Testing body"
+        }
+
+        fetch('http://api.bowspace.ca/rest/post', {
+            method: 'post',
+            mode: 'cors',
+            credentials: 'omit',
+            body: JSON.stringify(newPost)
+        })
+        .then(res => res.json())
+        .then((data) => console.log(data))
+        .catch(error => console.log('Error:', error))
+    }
+
+    
+
     render(){
         return( 
             <div id="wrapper-panel">
@@ -46,7 +72,7 @@ class PanelPost extends Component {
 
                         </div>
                         <div className="col-md-6 mb-3">
-                            <Button type="success">Post</Button>
+                            <button onClick={this.CreateNewPost} type="submit" className="btn btn-success">Post</button>
                             <Link to="/home">
                                 <Button id="btn-cancel" type="danger">Cancel</Button>       
                             </Link>                         
