@@ -7,7 +7,8 @@ class LeftNavigationBar extends Component {
       return (
         <div className="card">
             <div className="card-header text-white bg-primary">
-                <h5><i className="fa fa-user-circle-o"></i> User-name</h5>
+                <h5><i className="fa fa-user-circle-o"></i> Welcome User-name</h5>
+                <button className="btn btn-danger mt-4">Logout</button>
             </div>
             <div className="card-body">
                 <div className="input-group mb-3">

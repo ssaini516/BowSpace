@@ -19,13 +19,15 @@ class HomePageWrapper extends Component {
                 { username: "pablo", title: "Hey Yo", message: "Welcome to BowSpace"}
             ]
         }
+
+        this.token = sessionStorage.getItem('loginToken');
     }
 
     ///
     /// Render
     ///
     render() {
-
+        console.log(this.token);
         return(
             <div id="home-page-wrapper" className="container-fluid mt-3">
             
