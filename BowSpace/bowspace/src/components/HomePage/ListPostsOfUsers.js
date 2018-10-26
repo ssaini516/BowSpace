@@ -2,19 +2,23 @@ import React from 'react';
 import UserPostPanel from './UserPostPanel.js';
 import Scroll from './Scroll.js';
 
-const ListPostsOfUsers = () => {
+const ListPostsOfUsers = (props) => {
+
+    const listPosts = props.listPosts;
 
     return(
         <div id="list-posts-of-users">
             <Scroll>
-                <UserPostPanel />
-                <UserPostPanel />
-                <UserPostPanel />
-                <UserPostPanel />
-                <UserPostPanel />
-                <UserPostPanel />
-                <UserPostPanel />
-                <UserPostPanel />
+                {
+                    listPosts.map(
+                        (post, index) => {
+                            return <UserPostPanel key={index}
+                                                  username={post.username}
+                                                  title={post.title}
+                                                  message={post.messgae}/>
+                        }
+                    )
+                }
             </Scroll>            
         </div>
     );

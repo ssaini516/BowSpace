@@ -11,9 +11,13 @@ class HomePageWrapper extends Component {
 
     constructor(props) {
         super(props);
-        
+
         this.state = {
-            listPosts = []
+            listPosts: [
+                {username: "hdo488", title: "BVC", message: "Welcome to BowSpace"},
+                { username: "s.saini", title: "Hi there", message: "Welcome to BowSpace"},
+                { username: "pablo", title: "Hey Yo", message: "Welcome to BowSpace"}
+            ]
         }
     }
 
@@ -35,7 +39,7 @@ class HomePageWrapper extends Component {
                     </div>
 
                     <div className="col-md-6 col-lg-7">
-                        <ListPostsOfUsers />
+                        <ListPostsOfUsers listPosts={this.state.listPosts}/>
                     </div>
                 </div> 
 
