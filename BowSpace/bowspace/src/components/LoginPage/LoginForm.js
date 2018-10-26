@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 
 
 // test
@@ -39,9 +40,28 @@ class LoginForm extends Component {
 
         fetch(URL, requestBody)
             .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(err => console.error(err))
-        
+            .then(data => {
+
+                let validUsername = data.Login.UserName;
+                let token = data.Login.LoginToken;
+                let status = data.Status;
+
+                console.log(validUsername);
+                console.log(token);
+                console.log(status);
+
+                if (status === 'success') {
+
+                    // store token, username to browser session
+                    sessionStorage.setItem('loginToken', token);
+                    sessionStorage.setItem('loginUsername', validUsername);
+
+                    // update state to confirm user logined successfully
+                    this.setState({ isAuthenticated: true})      
+                    
+                }
+            })
+            .catch(err => console.error(err))      
     }
 
     render(){
@@ -65,11 +85,12 @@ class LoginForm extends Component {
                                placeholder="**********" 
                                ref="password"
                                />
-                    </div>
-                    <button className="btn btn-success"
-                            onClick={this.handleLoginSubmit}>
-                        Sign In <i className="fa fa-sign-in" aria-hidden="true"></i>
-                    </button>
+                    </div> 
+                        <button className="btn btn-success"
+                                onClick={this.handleLoginSubmit}>
+                            Sign In <i className="fa fa-sign-in" aria-hidden="true"></i>
+                        </button>
+                        <Redirect to={(this.state.isAuthenticated) ? "/home" : "/"} />
                 </form> 
             </div>
         );
