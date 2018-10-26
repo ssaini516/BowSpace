@@ -10,23 +10,39 @@ class LoginWrapper extends Component {
 
     constructor(props) {
         super(props);
-        
+
         this.state = {
             username: '',
             password: ''
         }
     }
 
+    onUserNameInput = (username) => {
+
+        // update username state based on user input
+        this.setState({username: username})
+    }
+
+    onPasswordInput = (pwd) => {
+
+        // update password state based on password input
+        this.setState({password: pwd});
+    }
+
+    componentDidMount() {
+
+    }
+
     render() {
+        
         return (
             <div className="login-wrapper">
+
                 <ImageLogin />
-                <LoginForm />
-                <Link to="/home">
-                    <Button id="btn-login" type="success">
-                        Sign In <i className="fa fa-sign-in" aria-hidden="true"></i>
-                    </Button>
-                </Link>        
+
+                <LoginForm userNameInput={this.onUserNameInput}
+                           passwordInput={this.onPasswordInput}
+                />
             </div>
         )
     };
