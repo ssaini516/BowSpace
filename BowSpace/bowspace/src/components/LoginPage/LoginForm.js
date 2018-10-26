@@ -4,6 +4,14 @@ import React, { Component } from 'react';
 // test
 class LoginForm extends Component {
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isAuthenticated: false
+        }
+    }
+
     handleLoginSubmit = (e) => {
 
         e.preventDefault();
@@ -12,9 +20,27 @@ class LoginForm extends Component {
 
         const passwordInput = this.refs.password.value;
 
-        this.props.userNameInput(usernameInput);
+        const URL = "http://api.bowspace.ca/rest/auth";
 
-        this.props.passwordInput(passwordInput);
+        const APIRequest = {
+            EmailAddress: usernameInput,
+            Password: passwordInput
+        }
+
+        const requestBody = {
+            method: 'POST',
+            cache: 'no-cache',
+            mode: 'cors',
+            credentials: 'omit',
+            body: JSON.stringify(APIRequest)
+        }
+
+        console.log("[Index] Preparing to fetch API login");
+
+        fetch(URL, requestBody)
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(err => console.error(err))
         
     }
 
@@ -41,8 +67,7 @@ class LoginForm extends Component {
                                />
                     </div>
                     <button className="btn btn-success"
-                            onClick={this.handleLoginSubmit}
-                    >
+                            onClick={this.handleLoginSubmit}>
                         Sign In <i className="fa fa-sign-in" aria-hidden="true"></i>
                     </button>
                 </form> 
