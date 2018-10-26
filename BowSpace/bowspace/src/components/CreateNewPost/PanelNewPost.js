@@ -17,7 +17,10 @@ class PanelPost extends Component {
             body: "Testing body"
         }
 
-        fetch('http://api.bowspace.ca/rest/post', {
+        var userToken = sessionStorage.getItem('loginToken');
+
+        if (userToken) {
+            fetch('http://api.bowspace.ca/rest/post', {
             method: 'post',
             mode: 'cors',
             credentials: 'omit',
@@ -25,7 +28,8 @@ class PanelPost extends Component {
         })
         .then(res => res.json())
         .then((data) => console.log(data))
-        .catch(error => console.log('Error:', error))
+        .catch(error => console.log('Error:', error))     
+        }
     }
 
     
@@ -44,9 +48,9 @@ class PanelPost extends Component {
                         <div className="form-group mb-4 col-12">
                             <div className="input-group-prepend">
                                 <div className="input-group-prepend">
-                                    <span className="input-group-text"><i className="fa fa-buysellads"></i> Title</span>
+                                    <span className="input-group-text"><i className="fa fa-buysellads"></i> Sender</span>
                                 </div>
-                                <input className="form-control" required></input>
+                                <input className="form-control" ref="sender" required></input>
                             </div>
                         </div>
 
@@ -55,7 +59,7 @@ class PanelPost extends Component {
                                 <div className="input-group-prepend">
                                 <span className="input-group-text"><i className="fa fa-user-plus"></i> Receipient</span>
                                 </div>
-                                <input className="form-control" required></input>
+                                <input className="form-control" ref="recipient" required></input>
                             </div> 
                         </div>
 
@@ -63,7 +67,7 @@ class PanelPost extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text"><i className="fa fa-comments"></i>Post content</span>
                             </div>
-                            <textarea id="textarea" className="form-control" aria-label="With textarea" required></textarea>
+                            <textarea ref="textarea" className="form-control" aria-label="With textarea" required></textarea>
                         </div>
                     </div>
                     
