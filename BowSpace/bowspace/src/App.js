@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch, Link, Redicrect } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import LoginWrapper from './components/LoginPage/LoginWrapper.js';
 import PanelNewPost from './components/CreateNewPost/PanelNewPost.js';

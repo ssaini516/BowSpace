@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import LeftNavigationBar from './LeftNavigationBar.js';
 import ListPostsOfUsers from './ListPostsOfUsers.js';
 import Button from '../Button/Button.js';
@@ -17,23 +17,38 @@ class HomePageWrapper extends Component {
                 {username: "hdo488", title: "BVC", message: "Welcome to BowSpace"},
                 { username: "s.saini", title: "Hi there", message: "Welcome to BowSpace"},
                 { username: "pablo", title: "Hey Yo", message: "Welcome to BowSpace"}
-            ]
+            ],
+            isLogout: false
         }
 
         this.token = sessionStorage.getItem('loginToken');
+    }
+
+    hanldeLogout = () => {
+
+        if(this.state.isLogout || !this.token) {
+            return <Redirect to="/" />
+        }   
+    }
+
+    hanleLogoutClick =(logoutStatus) => {
+
+        if(logoutStatus) {
+            this.setState({isLogout: true})
+        }
     }
 
     ///
     /// Render
     ///
     render() {
-        console.log(this.token);
+        
         return(
             <div id="home-page-wrapper" className="container-fluid mt-3">
-            
+                {this.hanldeLogout()}
                 <div className="row">
                     <div className="col-md-4 col-lg-3">
-                        <LeftNavigationBar />
+                        <LeftNavigationBar logoutStatus={this.hanleLogoutClick}/>
                     </div>
 
                     <div className="col-md-1 col-lg-1">

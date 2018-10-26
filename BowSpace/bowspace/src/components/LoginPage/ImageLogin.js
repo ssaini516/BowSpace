@@ -4,8 +4,7 @@ const ImageLogin = () => {
 
     return(
 
-        <img src={require('../../images/logo.jpg')} 
-                alt="logo image" />
+        <img src={require('../../images/logo.jpg')} alt="login avarta"/>
         );
 }
 

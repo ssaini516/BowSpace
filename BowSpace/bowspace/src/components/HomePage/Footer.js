@@ -10,7 +10,7 @@ class Footer extends Component {
                     Copyright ©2018
                     </div>
                     <div className="col-md-4 col-md-offset-6 attribution">
-                     Developed by  <a target="_blank" href="#">Reactnators</a> .
+                     Developed by  <a target="_blank" href="">Reactnators</a> .
                     </div>
                 </div> 
             </div>
