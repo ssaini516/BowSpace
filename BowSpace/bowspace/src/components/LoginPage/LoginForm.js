@@ -39,9 +39,22 @@ class LoginForm extends Component {
 
         fetch(URL, requestBody)
             .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(err => console.error(err))
-        
+            .then(data => {
+                console.log(data);
+
+                let validUsername = data.Login.UserName;
+                let token = data.Login.LoginToken;
+                let status = data.Status;
+
+                if (status === 'success') {
+                    // update state to confirm user logined successfully
+                    this.setState({ isAuthenticated: true})
+
+                    // store token to browser session
+                    sessionStorage.setItem('loginToken', token);
+                }
+            })
+            .catch(err => console.error(err))      
     }
 
     render(){
