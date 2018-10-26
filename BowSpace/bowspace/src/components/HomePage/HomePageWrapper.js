@@ -9,7 +9,13 @@ import './HomePage.css';
 
 class HomePageWrapper extends Component {
 
-    
+    constructor(props) {
+        super(props);
+        
+        this.state = {
+            listPosts = []
+        }
+    }
 
     ///
     /// Render
