@@ -20,7 +20,7 @@ class LoginForm extends Component {
 
         const passwordInput = this.refs.password.value;
 
-        const URL = "http://api.bowspace.ca/rest/auth";
+        const URL = "http://api.bowspace.ca/rest/auth/login";
 
         const APIRequest = {
             EmailAddress: usernameInput,
