@@ -14,7 +14,6 @@ const UserPostPanel = ({username, title, message}) => {
                     <p class="card-text">
                         {message}
                     </p>
-                    <a href="#" class="btn btn-primary">Detail</a>
                 </div>
             </div>
         </div>
