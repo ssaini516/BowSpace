@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Button from '../Button/Button.js';
 
 class LeftNavigationBar extends Component {
+
     render() {
       return (
         <div className="card">

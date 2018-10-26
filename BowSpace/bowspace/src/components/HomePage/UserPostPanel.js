@@ -4,14 +4,14 @@ const UserPostPanel = ({username, title, message}) => {
 
     return(
         <div className="user-post-panel">
-            <div class="card mb-4">
-                <div class="card-header">
+            <div className="card mb-4">
+                <div className="card-header">
                     {username}
                 </div>
 
-                <div class="card-body">
-                    <h5 class="card-title">{title}</h5>
-                    <p class="card-text">
+                <div className="card-body">
+                    <h5 className="card-title">{title}</h5>
+                    <p className="card-text">
                         {message}
                     </p>
                 </div>
