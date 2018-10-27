@@ -26,3 +26,15 @@ img {
 #btn-login {
    margin-left: 120px;
 }
+
+.display-warning {
+    color: red;
+    font-weight: bold;
+    font-size: 1rem;
+    display: block;
+}
+
+.hide-warning {
+    display: none;
+    visibility: hidden;
+}

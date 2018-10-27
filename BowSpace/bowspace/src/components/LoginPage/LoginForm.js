@@ -9,23 +9,18 @@ class LoginForm extends Component {
         super(props);
 
         this.state = {
-            isAuthenticated: false
+            isAuthenticated: false,
+            isInputBlank: false
         }
     }
 
-    handleLoginSubmit = (e) => {
-
-        e.preventDefault();
-
-        const usernameInput = this.refs.username.value;
-
-        const passwordInput = this.refs.password.value;
+    AuthenticateLogin = (username, password) => {
 
         const URL = "http://api.bowspace.ca/rest/auth/login";
 
         const APIRequest = {
-            EmailAddress: usernameInput,
-            Password: passwordInput
+            EmailAddress: username,
+            Password: password
         }
 
         const requestBody = {
@@ -57,16 +52,36 @@ class LoginForm extends Component {
                     sessionStorage.setItem('loginUsername', validUsername);
 
                     // update state to confirm user logined successfully
-                    this.setState({ isAuthenticated: true})      
-                    
+                    this.setState({ isAuthenticated: true })
                 }
             })
-            .catch(err => console.error(err))      
+            .catch(err => console.error(err))  
+    }
+
+    handleLoginSubmit = (e) => {
+
+        e.preventDefault();
+
+        const usernameInput = this.refs.username.value;
+
+        const passwordInput = this.refs.password.value;
+
+        if (usernameInput && passwordInput)
+        {
+            this.AuthenticateLogin(usernameInput, passwordInput);
+            
+        } else {
+            // user leave input blank
+            this.setState({isInputBlank: true});
+        }
+
+            
     }
 
     render(){
         return( 
             <div className="wrapper">
+                <div className={(this.state.isInputBlank) ? "display-warning" : "hide-warning"}>Username and password cannot be empty</div>
                 <form className="container">
                     <div className="form-group">
                         <label>Email</label>
@@ -75,6 +90,7 @@ class LoginForm extends Component {
                                className="form-control" 
                                placeholder="Please enter your email" 
                                ref="username" 
+                               required
                                />
                     </div>
                     <div className="form-group">
@@ -84,6 +100,7 @@ class LoginForm extends Component {
                                className="form-control" 
                                placeholder="**********" 
                                ref="password"
+                               required
                                />
                     </div> 
                         <button className="btn btn-success"

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import Button from '../Button/Button.js';
-import { Redirect } from 'react-router-dom';
+
 
 class LeftNavigationBar extends Component {
 
     handleLogout = () => {
 
         sessionStorage.clear();
+
         this.props.logoutStatus(true);
     }
 
