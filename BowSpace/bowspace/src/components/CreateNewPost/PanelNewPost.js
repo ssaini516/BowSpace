@@ -10,30 +10,48 @@ class PanelPost extends Component {
 
         this.CreateNewPost = this.CreateNewPost.bind(this)
     }
-    
+
     CreateNewPost(){
-        let newPost = {
-            title: "Testing",
-            body: "Testing body"
-        }
 
         var userToken = sessionStorage.getItem('loginToken');
 
-        if (userToken) {
-            fetch('http://api.bowspace.ca/rest/post', {
+        // Function to make the postID unique
+        var postId = function () {
+            return '_' + Math.random().toString(36).substr(2, 9);
+        };
+
+        const sender = this.refs.sender.value;
+        const recipient = this.refs.recipient.value;
+        const postContent = this.refs.textarea.value;
+
+        const url = 'http://api.bowspace.ca/rest/post';
+
+        const data = {
+            PostId: postId(),
+            SenderId: sender,
+            RecipientId: recipient,
+            PostHtml: postContent
+        }
+
+        const header = new Headers({
+            'content-Type': 'application/x-www-form-urlencoded',
+            'Authorization': 'Bearer ' + userToken
+        })
+
+        console.log(data);
+      
+        fetch(url, {
+            headers: header,
             method: 'post',
             mode: 'cors',
             credentials: 'omit',
-            body: JSON.stringify(newPost)
-        })
-        .then(res => res.json())
-        .then((data) => console.log(data))
-        .catch(error => console.log('Error:', error))     
+            body: JSON.stringify(data)
+            })
+            .then(res => res.json())
+            .then((data) => console.log(data))
+            .catch(error => console.log('Error:', error))           
         }
-    }
-
-    
-
+        
     render(){
         return( 
             <div id="wrapper-panel">
