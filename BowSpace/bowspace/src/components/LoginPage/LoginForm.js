@@ -10,7 +10,8 @@ class LoginForm extends Component {
 
         this.state = {
             isAuthenticated: false,
-            isInputBlank: false
+            isInputBlank: false,
+            isWrongCredentials: false
         }
     }
 
@@ -40,10 +41,12 @@ class LoginForm extends Component {
                 let validUsername = data.Login.UserName;
                 let token = data.Login.LoginToken;
                 let status = data.Status;
+                let userId = data.Login.UserId;
 
                 console.log(validUsername);
                 console.log(token);
                 console.log(status);
+                console.log(userId);
 
                 if (status === 'success') {
 
@@ -53,6 +56,10 @@ class LoginForm extends Component {
 
                     // update state to confirm user logined successfully
                     this.setState({ isAuthenticated: true })
+                }
+                else {
+                    // username and pwd input wrong
+                    this.setState({ isWrongCredentials: true })
                 }
             })
             .catch(err => console.error(err))  
@@ -69,19 +76,23 @@ class LoginForm extends Component {
         if (usernameInput && passwordInput)
         {
             this.AuthenticateLogin(usernameInput, passwordInput);
-            
+
         } else {
             // user leave input blank
             this.setState({isInputBlank: true});
-        }
-
-            
+        }          
     }
 
     render(){
         return( 
             <div className="wrapper">
-                <div className={(this.state.isInputBlank) ? "display-warning" : "hide-warning"}>Username and password cannot be empty</div>
+
+                {
+                    (this.state.isInputBlank) ? <div className="display-warning">Username and password cannot be empty</div>
+                    : (this.state.isWrongCredentials) ? <div className="display-warning">Invalid username and password</div>
+                    : <div className="hide-warning"></div>
+                }
+
                 <form className="container">
                     <div className="form-group">
                         <label>Email</label>
