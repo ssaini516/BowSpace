@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ErrorMessage from '../ErrorMessage/ErrorMessage.js';
 
 
 class LeftNavigationBar extends Component {
@@ -40,11 +41,17 @@ class LeftNavigationBar extends Component {
         fetch(URL + params, requestBody)
            .then(response => response.json())
            .then(data => {
+
                const listMatchingUsers = data.MatchingUsers;
 
                if (listMatchingUsers !== null) {
+
                    this.props.searchUsers(listMatchingUsers);
-               }       
+
+               } else {
+                   // user not found
+                   this.props.foundUser(false);
+               }      
            })          
     }
 
@@ -63,6 +70,9 @@ class LeftNavigationBar extends Component {
     render() {
 
         const listUsers = this.props.listUsers;
+        const isUserNotFound = this.props.isUserNotFound;
+        const error = (isUserNotFound) ? <ErrorMessage>User Not Found !!!</ErrorMessage> 
+                      : null;
 
         return (
             <div className="card">
@@ -88,6 +98,9 @@ class LeftNavigationBar extends Component {
                     </button>
                     
                     <p></p>
+                    
+                        {error}
+
                     <ul className ="list-group">
 
                         {

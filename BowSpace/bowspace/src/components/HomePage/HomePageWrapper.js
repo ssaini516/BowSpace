@@ -19,7 +19,8 @@ class HomePageWrapper extends Component {
                 { username: "pablo", title: "Hey Yo", message: "Welcome to BowSpace"}
             ],
             isLogout: false,
-            listSearchedUsers: []       
+            listSearchedUsers: [],
+            isUserNotFound: false       
         }
 
         this.token = sessionStorage.getItem('loginToken');
@@ -41,14 +42,23 @@ class HomePageWrapper extends Component {
 
     handleSearchUser = (listMatchingUser) => {
 
-        this.setState({ listSearchedUsers: listMatchingUser });     
+        this.setState({ listSearchedUsers: listMatchingUser });
+        this.setState({ isUserNotFound: false });     
+    }
+
+    handleFoundUser = (isUserFound) => {
+
+        if (isUserFound === false) {
+
+            this.setState({ isUserNotFound : true });
+        }
     }
 
     ///
     /// Render
     ///
     render() {
-        
+
         return(
             <div id="home-page-wrapper" className="container-fluid mt-3">
                 {this.hanldeLogout()}
@@ -57,6 +67,8 @@ class HomePageWrapper extends Component {
                         <LeftNavigationBar logoutStatus={this.hanleLogoutClick}
                                            searchUsers={this.handleSearchUser}
                                            listUsers={this.state.listSearchedUsers}
+                                           foundUser={this.handleFoundUser}
+                                           isUserNotFound={this.state.isUserNotFound}
                         />
                     </div>
 
