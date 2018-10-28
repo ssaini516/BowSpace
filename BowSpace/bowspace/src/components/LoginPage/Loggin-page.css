@@ -13,7 +13,8 @@ form label{
 
 .login-wrapper {
     margin: 100px 38%;
-    padding: 10px;
+    background-image: linear-gradient(to bottom, #689eb8, #5b91ac, #4e849f, #417793, #336b87);
+    padding: 22px;
 }
 
 img {
@@ -25,6 +26,10 @@ img {
 
 #btn-login {
    margin-left: 120px;
+}
+
+#button-log{
+    width: 300px;
 }
 
 .display-warning {

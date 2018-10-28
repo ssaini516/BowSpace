@@ -114,7 +114,7 @@ class LoginForm extends Component {
                                required
                                />
                     </div> 
-                        <button className="btn btn-success"
+                        <button id="button-log" className="btn btn-success"
                                 onClick={this.handleLoginSubmit}>
                             Sign In <i className="fa fa-sign-in" aria-hidden="true"></i>
                         </button>
