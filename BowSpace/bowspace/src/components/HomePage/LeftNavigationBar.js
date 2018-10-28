@@ -78,7 +78,7 @@ class LeftNavigationBar extends Component {
             <div className="card">
                 <div className="card-header text-white bg-primary">
                     <h5><i className="fa fa-user-circle-o"></i> {`Welcome ${this.loginedUsername}`}</h5>
-                    <button className="btn btn-danger mt-4"
+                    <button className="btn btn-danger mt-4 btn-sm"
                             onClick={this.handleLogout}>
                         Logout
                     </button>

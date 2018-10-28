@@ -12,7 +12,7 @@ color: green;
 #footer{
     color: #AAA;
     background: #0B3861 none repeat scroll 0% 0%;
-    padding: 10px 0px;
+    height: 80px;
 }
 
 h1, label, a , h3, h5, p{

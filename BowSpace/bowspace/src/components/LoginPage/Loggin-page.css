@@ -1,6 +1,7 @@
 form label{
     font-size: 25px;
     color: floralwhite;
+    margin-top: 10px;
 }
 
 #width1{
@@ -15,6 +16,7 @@ form label{
     margin: 100px 38%;
     background-image: linear-gradient(to bottom, #689eb8, #5b91ac, #4e849f, #417793, #336b87);
     padding: 22px;
+    position: absolute;
 }
 
 img {

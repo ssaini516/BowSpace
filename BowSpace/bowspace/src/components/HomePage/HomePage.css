@@ -11,5 +11,10 @@
 #footer{
     color: #AAA;
     background: #0B3861 none repeat scroll 0% 0%;
-    padding: 10px 0px;
 }
+
+#footer p{
+    text-align: center;
+}
+
+

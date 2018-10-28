@@ -60,7 +60,7 @@ class HomePageWrapper extends Component {
     render() {
 
         return(
-            <div id="home-page-wrapper" className="container-fluid mt-3">
+            <div id="home-page-wrapper" className="container-fluid mt-3 ml-5">
                 {this.hanldeLogout()}
                 <div className="row">
                     <div className="col-md-4 col-lg-3">
