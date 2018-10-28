@@ -2,12 +2,11 @@
     border: 0.5 solid black;
     margin: 100px auto;
     width: 400px;
-    background-color: #0080ff;
+    background-image: linear-gradient(to bottom, #689eb8, #5b91ac, #4e849f, #417793, #336b87);
 }
 
 
 #text-panel{
-    
     font-size: auto ;
     color: aliceblue;
     margin-left: 3.5rem;
@@ -19,5 +18,5 @@
 }
 
 #btn-cancel {
-    margin-left: 10px;
+    margin-left: 15px;
 }

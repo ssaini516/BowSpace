@@ -59,7 +59,8 @@ class PanelPost extends Component {
                     <div className="row"> 
                         <div className="form-group mb-3 col-12">
                             <div className="input-group-prepend">
-                                <h1 id="text-panel">Create New Post</h1>
+                                <h3 id="text-panel">BowSpace - create post</h3>
+                                
                             </div>
                         </div>
 
@@ -94,9 +95,9 @@ class PanelPost extends Component {
 
                         </div>
                         <div className="col-md-6 mb-3">
-                            <button onClick={this.CreateNewPost} type="submit" className="btn btn-success">Post</button>
+                            <button onClick={this.CreateNewPost} type="submit" className="btn btn-success btn-sm">Post <i className="fa fa-spinner" aria-hidden="true"></i></button>
                             <Link to="/home">
-                                <Button id="btn-cancel" type="danger">Cancel</Button>       
+                                <Button id="btn-cancel" type="danger">Cancel <i className="fa fa-arrow-circle-left" aria-hidden="true"></i></Button>       
                             </Link>                         
                         </div>                
                     </div>
