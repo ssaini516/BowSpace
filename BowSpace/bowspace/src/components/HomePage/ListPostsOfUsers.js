@@ -6,6 +6,9 @@ import ErrorMessage from '../ErrorMessage/ErrorMessage.js';
 const ListPostsOfUsers = (props) => {
 
     const listPosts = props.listPosts;
+    console.log(listPosts);
+    //RecipientId
+    //SenderId
     const isPostNotFound = props.isPostNotFound;
     const errorMessage = (isPostNotFound) ? <ErrorMessage>Post not found</ErrorMessage>
                                           : null;
@@ -13,7 +16,7 @@ const ListPostsOfUsers = (props) => {
         <div id="list-posts-of-users">
 
             {errorMessage} 
-            
+
             <Scroll height="700px">
                 {
                     listPosts.map(
@@ -21,7 +24,10 @@ const ListPostsOfUsers = (props) => {
                             return <UserPostPanel key={index}
                                                   postId={post.PostId}
                                                   time={post.ValidFromUtc}
-                                                  message={post.PostHtml}/>
+                                                  message={post.PostHtml}
+                                                  recipientId={post.RecipientId}
+                                                  senderId={post.SenderId}
+                                                  />
                         }
                     )
                 }

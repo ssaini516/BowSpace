@@ -22,4 +22,7 @@
     text-align: center;
 }
 
-
+.userDisplay {
+    color: green;
+    text-decoration: underline;
+}
