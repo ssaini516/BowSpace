@@ -53,6 +53,7 @@ class LoginForm extends Component {
                     // store token, username to browser session
                     sessionStorage.setItem('loginToken', token);
                     sessionStorage.setItem('loginUsername', validUsername);
+                    sessionStorage.setItem('loginUserID', userId);
 
                     // update state to confirm user logined successfully
                     this.setState({ isAuthenticated: true })
