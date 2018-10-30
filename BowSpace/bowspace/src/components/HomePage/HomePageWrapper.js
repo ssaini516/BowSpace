@@ -12,11 +12,7 @@ class HomePageWrapper extends Component {
         super(props);
 
         this.state = {
-            listPosts: [
-                {username: "hdo488", title: "BVC", message: "Welcome to BowSpace"},
-                { username: "s.saini", title: "Hi there", message: "Welcome to BowSpace"},
-                { username: "pablo", title: "Hey Yo", message: "Welcome to BowSpace"}
-            ],
+            listPosts: [],
             isLogout: false,
             listSearchedUsers: [],
             listSearchedPosts: [],
@@ -58,6 +54,48 @@ class HomePageWrapper extends Component {
 
         this.setState({ listPosts: listMatchingPosts });
             
+    }
+
+    displayListOfUsersWhenUserLogin = (loginToken) => {
+        
+        // this function is to retrieve all users to display
+        // on left panel by default
+
+        let URL = 'http://api.bowspace.ca/rest/users';
+
+        // Build header obj 
+        const header = new Headers({
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Authorization': 'Bearer ' + loginToken
+        });
+
+        const params = '?userid=0&keywords=';
+
+        // Build request bosy
+        let requestBody = {
+            Method: 'GET',
+            headers: header,
+            cache: 'no-cache',
+            mode: 'cors',
+            credentials: 'omit',
+            redirect: 'error'
+        }
+
+        fetch(URL + params, requestBody)
+            .then(response => response.json())
+            .then(data => data.MatchingUsers)
+            .then(listUsers => {
+                this.setState({ listSearchedUsers: listUsers })
+            })
+            .catch(err => console.error(err))
+    }
+
+    componentDidMount() {
+        
+        let loginToken = sessionStorage.getItem('loginToken');
+        
+        this.displayListOfUsersWhenUserLogin(loginToken);
+        
     }
 
     ///

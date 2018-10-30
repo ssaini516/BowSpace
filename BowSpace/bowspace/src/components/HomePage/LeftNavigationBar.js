@@ -101,11 +101,12 @@ class LeftNavigationBar extends Component {
             redirect: 'error'
         }
 
-        fetch(url+ params, requestBody)
+        fetch(url + params, requestBody)
         .then(response => response.json())
         .then(data => {
 
             const listMatchingPosts = data.MatchingPosts;
+
             if (listMatchingPosts !== null) {
 
                 this.props.matchPosts(listMatchingPosts);
@@ -113,16 +114,16 @@ class LeftNavigationBar extends Component {
             }
         })     
     }
+
     handleSearchPost = () => {
 
-         // get searching keyword
-         const searchingPostInput = this.refs.SearchPost.value;
+        // get searching keyword
+        const searchingPostInput = this.refs.SearchPost.value;
 
         let loginToken = sessionStorage.getItem('loginToken');
 
-
-         // Invoke function to get matching Post from API
-         this.getPostMatchingSearch(loginToken, searchingPostInput);
+        // Invoke function to get matching Post from API
+        this.getPostMatchingSearch(loginToken, searchingPostInput);
 
     }
 
