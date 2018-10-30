@@ -156,6 +156,22 @@ class LeftNavigationBar extends Component {
                                 />
                     </div>
 
+                    <div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="RadioOptions" id="Radio1" value="option1"></input>
+                            <label class="form-check-label" for="Radio1">Post ID</label>
+                            
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="RadioOptions" id="Radio2" value="option2"></input>
+                            <label class="form-check-label" for="Radio2">User Name</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="RadioOptions" id="Radio3" value="option3"></input>
+                            <label class="form-check-label" for="Radio3">Keywords</label>
+                        </div>
+                    </div>
+
                     <button className="btn btn-primary"
                             onClick={this.handleSearchPost}>
                         Search Post
