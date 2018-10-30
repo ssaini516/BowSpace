@@ -72,11 +72,12 @@ class LeftNavigationBar extends Component {
         let url  =  'http://api.bowspace.ca/rest/posts'
         if(this.refs.Radio1.checked == true)
         {
-            params = '?postid=0&keywords=' + searchingPostInput; 
+            params = '?postid=' + searchingPostInput; 
         }
         else if(this.refs.Radio2.checked == true)
         {
-            params = '?username=0&keywords=' + searchingPostInput;
+            params = '?senderid='+ searchingPostInput;
+            
         }
         else if(this.refs.Radio3.checked == true)
         {

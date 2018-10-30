@@ -5,7 +5,6 @@ import Scroll from './Scroll.js';
 const ListPostsOfUsers = (props) => {
 
     const listPosts = props.listPosts;
-    console.log(listPosts);
     return(
         <div id="list-posts-of-users">
             <Scroll>
