@@ -95,7 +95,7 @@ class HomePageWrapper extends Component {
 
                     <div className="col-md-2 col-lg-2 mt-3">
                         <Link to="/createPost">
-                            <Button type="primary">Create New Post</Button>
+                            <button className="btn btn-md btn-success btn-lg" id="btn-create-newPost">Create New Post  <i className="fa fa-file-text-o"></i>  </button>
                         </Link>                      
                     </div>  
 
