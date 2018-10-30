@@ -59,12 +59,62 @@ class LeftNavigationBar extends Component {
     
         // get searching keyword
         const searchingUserInput = this.refs.searchUser.value;
-        
-        // Call API to get matching users  
+         
         let loginToken = sessionStorage.getItem('loginToken');
 
         // Invoke function to get matching user from API
         this.getUsersMatchingSearch(loginToken, searchingUserInput);                  
+    }
+
+
+    getPostMatchingSearch = (loginToken, searchingPostInput)=> {
+
+        let url  =  'http://api.bowspace.ca/rest/posts'
+
+        // Build header obj 
+        const header = new Headers({
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Authorization': 'Bearer ' + loginToken
+        });
+
+        const params = '?senderid=0&keywords=' + searchingPostInput;
+
+        // Build request bosy
+        let requestBody = {
+            Method: 'GET',
+            headers: header,
+            cache: 'no-cache',
+            mode: 'cors',
+            credentials: 'omit',
+            redirect: 'error'
+        }
+
+        fetch(url+ params, requestBody)
+        .then(response => response.json())
+        .then(data => {
+
+            const listMatchingPosts = data.MatchingPosts;
+            if (listMatchingPosts !== null) {
+
+                this.props.matchPosts(listMatchingPosts);
+
+            } else {
+                  "user not found";
+                //this.props.foundUser(false);
+            }      
+        })     
+    }
+    handleSearchPost = () => {
+
+         // get searching keyword
+         const searchingPostInput = this.refs.SearchPost.value;
+
+        let loginToken = sessionStorage.getItem('loginToken');
+
+
+         // Invoke function to get matching Post from API
+         this.getPostMatchingSearch(loginToken, searchingPostInput);
+
     }
 
     render() {
@@ -94,7 +144,21 @@ class LeftNavigationBar extends Component {
 
                     <button className="btn btn-primary"
                             onClick={this.handleSearchUser}>
-                        Search
+                        Search User
+                    </button>
+
+                    <p></p>
+                     <div className="input-group mb-3">
+                        <input type="text" 
+                                className="form-control" 
+                                placeholder="SearchPost"
+                                ref="SearchPost"
+                                />
+                    </div>
+
+                    <button className="btn btn-primary"
+                            onClick={this.handleSearchPost}>
+                        Search Post
                     </button>
                     
                     <p></p>

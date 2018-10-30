@@ -20,6 +20,7 @@ class HomePageWrapper extends Component {
             ],
             isLogout: false,
             listSearchedUsers: [],
+            listSearchedPosts: [],
             isUserNotFound: false       
         }
 
@@ -54,6 +55,11 @@ class HomePageWrapper extends Component {
         }
     }
 
+    handleSearchPosts = (listMatchingPosts) => {
+
+        this.setState({ listPosts: listMatchingPosts });
+        //this.setState({ isPostNotFound: false });     
+    }
     ///
     /// Render
     ///
@@ -69,6 +75,7 @@ class HomePageWrapper extends Component {
                                            listUsers={this.state.listSearchedUsers}
                                            foundUser={this.handleFoundUser}
                                            isUserNotFound={this.state.isUserNotFound}
+                                           matchPosts = {this.handleSearchPosts}
                         />
                     </div>
 

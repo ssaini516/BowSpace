@@ -5,7 +5,7 @@ import Scroll from './Scroll.js';
 const ListPostsOfUsers = (props) => {
 
     const listPosts = props.listPosts;
-
+    console.log(listPosts);
     return(
         <div id="list-posts-of-users">
             <Scroll>
@@ -13,9 +13,9 @@ const ListPostsOfUsers = (props) => {
                     listPosts.map(
                         (post, index) => {
                             return <UserPostPanel key={index}
-                                                  username={post.username}
-                                                  title={post.title}
-                                                  message={post.messgae}/>
+                                                  postId={post.PostId}
+                                                  time={post.ValidFromUtc}
+                                                  message={post.PostHtml}/>
                         }
                     )
                 }
