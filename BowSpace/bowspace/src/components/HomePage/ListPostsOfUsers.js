@@ -7,13 +7,16 @@ const convertIdToName = (id) => {
 
     const listOfUsers = JSON.parse(sessionStorage.getItem('listOfUsers'));
 
-    for (let i=0; i < listOfUsers.length; i++) {
+    if (listOfUsers) {
         
-        if(listOfUsers[i].UserId === id) {
+        for (let i = 0; i < listOfUsers.length; i++) {
 
-            return listOfUsers[i].UserName;
+            if (listOfUsers[i].UserId === id) {
+
+                return listOfUsers[i].UserName;
+            }
         }
-    }
+    }  
 
 }
 
@@ -22,7 +25,7 @@ const ListPostsOfUsers = (props) => {
     const listPosts = props.listPosts;
 
     const isPostNotFound = props.isPostNotFound;
-    
+
     const errorMessage = (isPostNotFound) ? <ErrorMessage>Post not found</ErrorMessage>
                                           : null;
     return(
