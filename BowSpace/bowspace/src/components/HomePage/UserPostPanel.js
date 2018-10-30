@@ -14,7 +14,7 @@ const UserPostPanel = ({postId, time, message}) => {
                     <p className="card-text">
                         {message}
                     </p>
-                    <p style = {{"paddingLeft" : "75%"}}> Time: {time} </p>
+                    <p style = {{"paddingLeft" : "65%"}}> Time: {time} </p>
                 </div>
             </div>
         </div>

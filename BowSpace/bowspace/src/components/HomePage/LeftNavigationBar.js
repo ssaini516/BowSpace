@@ -180,8 +180,7 @@ class LeftNavigationBar extends Component {
                             <label className="form-check-label" htmlFor="Radio3">Keywords</label>
                         </div>
                     </div>
-
-                    <button className="btn btn-primary"
+                    <button className="btn btn-primary mt-3"
                             onClick={this.handleSearchPost}>
                         Search Post
                     </button>
