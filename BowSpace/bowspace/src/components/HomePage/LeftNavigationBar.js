@@ -152,7 +152,7 @@ class LeftNavigationBar extends Component {
                     <div className="input-group mb-3">
                         <input type="text" 
                                 className="form-control" 
-                                placeholder="Username"
+                                placeholder="Search for users ..."
                                 ref="searchUser"
                                 />
                     </div>
@@ -166,7 +166,7 @@ class LeftNavigationBar extends Component {
                      <div className="input-group mb-3">
                         <input type="text" 
                                 className="form-control" 
-                                placeholder="SearchPost"
+                                placeholder="Search for posts ..."
                                 ref="SearchPost"
                                 />
                     </div>
