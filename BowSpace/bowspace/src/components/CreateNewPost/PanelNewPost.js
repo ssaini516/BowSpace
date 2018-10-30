@@ -13,13 +13,14 @@ class PanelPost extends Component {
     CreateNewPost(){
 
         var userToken = sessionStorage.getItem('loginToken');
+        var userID = sessionStorage.getItem('loginUserID');
 
         // Function to make the postID unique
         var postId = function () {
             return '_' + Math.random().toString(36).substr(2, 9);
         };
 
-        const sender = this.refs.sender.value;
+       // const sender = this.refs.sender.value;
         const recipient = this.refs.recipient.value;
         const postContent = this.refs.textarea.value;
 
@@ -27,7 +28,7 @@ class PanelPost extends Component {
 
         const data = {
             PostId: postId(),
-            SenderId: sender,
+            SenderId: userID,
             RecipientId: recipient,
             PostHtml: postContent
         }
@@ -50,7 +51,8 @@ class PanelPost extends Component {
             .then((data) => console.log(data))
             .catch(error => console.log('Error:', error))           
         }
-        
+
+    
     render(){
         return( 
             <div id="wrapper-panel">
@@ -68,7 +70,7 @@ class PanelPost extends Component {
                                 <div className="input-group-prepend">
                                     <span className="input-group-text"><i className="fa fa-buysellads"></i> Sender</span>
                                 </div>
-                                <input className="form-control" ref="sender" required></input>
+                                <input className="form-control" ref="sender" readOnly></input>
                             </div>
                         </div>
 
