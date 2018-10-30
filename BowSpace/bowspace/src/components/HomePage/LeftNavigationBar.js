@@ -69,8 +69,11 @@ class LeftNavigationBar extends Component {
 
 
     getPostMatchingSearch = (loginToken, searchingPostInput)=> {
-        let params = ""
-        let url  =  'http://api.bowspace.ca/rest/posts'
+
+        let params = "";
+
+        let url  =  'http://api.bowspace.ca/rest/posts';
+
         if(this.refs.Radio1.checked === true)
         {
             params = '?postid=' + searchingPostInput; 
@@ -103,18 +106,18 @@ class LeftNavigationBar extends Component {
         }
 
         fetch(url + params, requestBody)
-        .then(response => response.json())
-        .then(data => {
+            .then(response => response.json())
+            .then(data => {
 
-            const listMatchingPosts = data.MatchingPosts;
+                const listMatchingPosts = data.MatchingPosts;
 
-            if (listMatchingPosts !== null) {
+                if (listMatchingPosts !== null) {
 
-                this.props.matchPosts(listMatchingPosts);
+                    this.props.matchPosts(listMatchingPosts);
 
-            }
-        })     
-    }
+                }
+            })     
+    }   
 
     handleSearchPost = () => {
 
@@ -170,12 +173,12 @@ class LeftNavigationBar extends Component {
                     <div>
                         <div className="form-check">
                             <input className="form-check-input" type="radio" name="RadioOptions" ref="Radio1" id="Radio1"></input>
-                            <label className="form-check-label" htmlFor="Radio1">Post ID</label>
+                            <label className="form-check-label" htmlFor="Radio1">PostID</label>
                             
                         </div>
                         <div className="form-check">
                             <input className="form-check-input" type="radio" name="RadioOptions" ref="Radio2" id="Radio2"></input>
-                            <label className="form-check-label" htmlFor="Radio2">User Name</label>
+                            <label className="form-check-label" htmlFor="Radio2">UserID</label>
                         </div>
                         <div className="form-check">
                             <input className="form-check-input" type="radio" name="RadioOptions" ref="Radio3" id="Radio3"></input>
@@ -192,7 +195,7 @@ class LeftNavigationBar extends Component {
                         {error}
 
                     <ul className ="list-group">
-                        <Scroll>
+                        <Scroll height="230px">
 
                             {
                                 listUsers.map(
@@ -208,7 +211,7 @@ class LeftNavigationBar extends Component {
                                     }
                                 )
                             }
-                            
+
                         </Scroll>
 
                     </ul>

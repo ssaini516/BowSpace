@@ -7,7 +7,7 @@ const ListPostsOfUsers = (props) => {
     const listPosts = props.listPosts;
     return(
         <div id="list-posts-of-users">
-            <Scroll>
+            <Scroll height="700px">
                 {
                     listPosts.map(
                         (post, index) => {

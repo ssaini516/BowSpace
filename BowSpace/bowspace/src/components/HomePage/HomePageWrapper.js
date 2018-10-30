@@ -90,11 +90,46 @@ class HomePageWrapper extends Component {
             .catch(err => console.error(err))
     }
 
+    displayListOfPostsWhenUserLogin = (loginToken) => {
+
+        // This function is to retieve all posts to display on posts panel
+        // when user login in successfully
+
+        let URL = 'http://api.bowspace.ca/rest/posts';
+
+        let param = "?postid=0";
+
+        const header = new Headers({
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Authorization': 'Bearer ' + loginToken
+        });
+
+        // Build request bosy
+        let requestBody = {
+            Method: 'GET',
+            headers: header,
+            cache: 'no-cache',
+            mode: 'cors',
+            credentials: 'omit',
+            redirect: 'error'
+        }
+
+        fetch(URL + param, requestBody)
+            .then(response => response.json())
+            .then(data => data.MatchingPosts)
+            .then(listOfPosts => {
+                this.setState({ listPosts: listOfPosts})
+            })
+            .catch(err => console.error(err));
+    }
+
     componentDidMount() {
         
         let loginToken = sessionStorage.getItem('loginToken');
         
         this.displayListOfUsersWhenUserLogin(loginToken);
+
+        this.displayListOfPostsWhenUserLogin(loginToken);
         
     }
 
