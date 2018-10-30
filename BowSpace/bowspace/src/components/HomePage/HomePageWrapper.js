@@ -94,6 +94,11 @@ class HomePageWrapper extends Component {
             .then(response => response.json())
             .then(data => data.MatchingUsers)
             .then(listUsers => {
+                
+                // store listOfUsers in session
+                // for gloabal access
+                sessionStorage.setItem('listOfUsers', JSON.stringify(listUsers));
+
                 this.setState({ listSearchedUsers: listUsers })
             })
             .catch(err => console.error(err))

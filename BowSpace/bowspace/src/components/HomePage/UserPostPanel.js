@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UserPostPanel = ({ postId, time, message, recipientId, senderId}) => {
+const UserPostPanel = ({ postId, time, message, recipientName, senderName}) => {
 
     return(
         <div className="user-post-panel">
@@ -12,9 +12,9 @@ const UserPostPanel = ({ postId, time, message, recipientId, senderId}) => {
                 <div className="card-body">
 
                     <h5 className="card-title">
-                        From:  <span className="userDisplay">{senderId}</span>
+                        From:  <span className="userDisplay">{senderName}</span>
                         <p></p> 
-                        To:  <span className="userDisplay">{recipientId}</span>
+                        To:  <span className="userDisplay">{recipientName}</span>
                     </h5>
 
                     <p className="card-text">

@@ -91,7 +91,7 @@ class LoginForm extends Component {
                                                   height={50}
                                                   width={50}
                                                   id="loader"
-                                                  id="load-icon"/> : null;
+                                                  /> : null;
 
         return( 
             <div className="wrapper">
