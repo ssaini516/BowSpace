@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Button from '../Button/Button.js';
 import { Link } from 'react-router-dom';
 import './Panel-New-Post.css';
 
@@ -95,9 +94,9 @@ class PanelPost extends Component {
 
                         </div>
                         <div className="col-md-6 mb-3">
-                            <a onClick={this.CreateNewPost} type="submit" className="btn btn-success btn-sm" id="btn-post">Post <i className="fa fa-spinner" aria-hidden="true"></i></a>
+                            <button onClick={this.CreateNewPost} type="submit" className="btn btn-success btn-sm" id="btn-post">Post <i className="fa fa-spinner" aria-hidden="true"></i></button>
                             <Link to="/home">
-                                <a className="btn btn-danger btn-sm ml-2 mb-2" id="btn-cancel">Cancel <i className="fa fa-arrow-circle-left" aria-hidden="true"></i></a>       
+                                <button className="btn btn-danger btn-sm ml-2 mb-1" id="btn-cancel">Cancel <i className="fa fa-arrow-circle-left" aria-hidden="true"></i></button>       
                             </Link>                         
                         </div>                
                     </div>
