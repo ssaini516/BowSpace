@@ -116,7 +116,8 @@ class LeftNavigationBar extends Component {
                     this.props.matchPosts(listMatchingPosts);
 
                 }
-            })     
+            })  
+            .catch(error => console.error(error));   
     }   
 
     handleSearchPost = () => {

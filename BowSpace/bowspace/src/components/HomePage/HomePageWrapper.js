@@ -15,8 +15,8 @@ class HomePageWrapper extends Component {
             listPosts: [],
             isLogout: false,
             listSearchedUsers: [],
-            listSearchedPosts: [],
-            isUserNotFound: false       
+            isUserNotFound: false,
+            isPostNotFound: false      
         }
 
         this.token = sessionStorage.getItem('loginToken');
@@ -53,6 +53,15 @@ class HomePageWrapper extends Component {
     handleSearchPosts = (listMatchingPosts) => {
 
         this.setState({ listPosts: listMatchingPosts });
+
+        if (this.state.listPosts.length === 0) {
+
+            this.setState({ isPostNotFound: true });
+
+            return;
+        }
+        
+        this.setState({ isPostNotFound: false });
             
     }
 
@@ -137,7 +146,7 @@ class HomePageWrapper extends Component {
     /// Render
     ///
     render() {
-
+        
         return(
             <div id="home-page-wrapper" className="container-fluid mt-3 ml-5">
                 {this.hanldeLogout()}
@@ -157,7 +166,9 @@ class HomePageWrapper extends Component {
                     </div>
 
                     <div className="col-md-6 col-lg-7">
-                        <ListPostsOfUsers listPosts={this.state.listPosts}/>
+                        <ListPostsOfUsers listPosts={this.state.listPosts}
+                                          isPostNotFound={this.state.isPostNotFound}
+                        />
                     </div>
                 </div> 
 
