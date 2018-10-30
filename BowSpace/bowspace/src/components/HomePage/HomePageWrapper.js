@@ -186,7 +186,7 @@ class HomePageWrapper extends Component {
                 </div>  
 
                 <div className="row">
-                    <div className="col-md-6 col-lg-11">
+                    <div className="col-md-12 col-lg-12">
                         <Footer />
                     </div>   
                 </div>          
