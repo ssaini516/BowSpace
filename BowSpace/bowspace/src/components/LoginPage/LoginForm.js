@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import Loader from 'react-loader-spinner';
 
 
 // test
@@ -11,11 +12,14 @@ class LoginForm extends Component {
         this.state = {
             isAuthenticated: false,
             isInputBlank: false,
-            isWrongCredentials: false
+            isWrongCredentials: false,
+            isSigning: false
         }
     }
 
     AuthenticateLogin = (username, password) => {
+
+        this.setState({isSigning: true});
 
         const URL = "http://api.bowspace.ca/rest/auth/login";
 
@@ -43,11 +47,6 @@ class LoginForm extends Component {
                 let status = data.Status;
                 let userId = data.Login.UserId;
 
-                console.log(validUsername);
-                console.log(token);
-                console.log(status);
-                console.log(userId);
-
                 if (status === 'success') {
 
                     // store token, username to browser session
@@ -56,14 +55,14 @@ class LoginForm extends Component {
                     sessionStorage.setItem('loginUserID', userId);
 
                     // update state to confirm user logined successfully
-                    this.setState({ isAuthenticated: true })
-                }
-                else {
-                    // username and pwd input wrong
-                    this.setState({ isWrongCredentials: true })
+                    this.setState({ isAuthenticated: true });
+                    this.setState({isSigning: false});
                 }
             })
-            .catch(err => console.error(err))  
+            .catch(err => {
+                console.error(err);
+                this.setState({ isWrongCredentials: true });
+            })  
     }
 
     handleLoginSubmit = (e) => {
@@ -85,6 +84,14 @@ class LoginForm extends Component {
     }
 
     render(){
+
+        const isLoading = this.state.isSigning;
+        const loadingIcon = (isLoading) ? <Loader type="ThreeDots" 
+                                                  color="white"
+                                                  height={50}
+                                                  width={50}
+                                                  className="loading-icon ml-5"/> : null;
+
         return( 
             <div className="wrapper">
 
@@ -115,12 +122,17 @@ class LoginForm extends Component {
                                required
                                />
                     </div> 
-                        <button id="button-log" className="btn btn-success"
-                                onClick={this.handleLoginSubmit}>
-                            Sign In <i className="fa fa-sign-in" aria-hidden="true"></i>
-                        </button>
-                        <Redirect to={(this.state.isAuthenticated) ? "/home" : "/"} />
-                </form> 
+
+                    <button id="button-log" 
+                            className="btn btn-success"
+                            onClick={this.handleLoginSubmit}>
+                        Sign In <i className="fa fa-sign-in" aria-hidden="true"></i>
+                    </button>
+                        
+                    {loadingIcon}
+                                          
+                    <Redirect to={(this.state.isAuthenticated) ? "/home" : "/"} />
+                </form>
             </div>
         );
     }

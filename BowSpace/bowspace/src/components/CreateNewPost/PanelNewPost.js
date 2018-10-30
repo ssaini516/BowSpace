@@ -14,6 +14,7 @@ class PanelPost extends Component {
 
         var userToken = sessionStorage.getItem('loginToken');
         var userID = sessionStorage.getItem('loginUserID');
+        console.log(userID);
 
         // Function to make the postID unique
         var postId = function () {
