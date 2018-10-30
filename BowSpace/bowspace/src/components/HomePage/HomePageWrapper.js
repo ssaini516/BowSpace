@@ -151,7 +151,7 @@ class HomePageWrapper extends Component {
             <div id="home-page-wrapper" className="container-fluid mt-3 ">
                 {this.hanldeLogout()}
                 <div className="row">
-                    <div className="col-sm-3 col-md-4 col-lg-4">
+                    <div className="col-sm-12 col-md-4 col-lg-4">
                         <LeftNavigationBar logoutStatus={this.hanleLogoutClick}
                                            searchUsers={this.handleSearchUser}
                                            listUsers={this.state.listSearchedUsers}
@@ -161,7 +161,7 @@ class HomePageWrapper extends Component {
                         />
                     </div>
 
-                    <div className="col-sm-6 col-md-8 col-lg-8">
+                    <div className="col-sm-12 col-md-8 col-lg-8">
                         <ListPostsOfUsers listPosts={this.state.listPosts}
                                           isPostNotFound={this.state.isPostNotFound}
                         />
