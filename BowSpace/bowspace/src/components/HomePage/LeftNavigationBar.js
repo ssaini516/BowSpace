@@ -165,18 +165,18 @@ class LeftNavigationBar extends Component {
                     </div>
 
                     <div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="RadioOptions" ref="Radio1" id="Radio1"></input>
-                            <label class="form-check-label" for="Radio1">Post ID</label>
+                        <div className="form-check">
+                            <input className="form-check-input" type="radio" name="RadioOptions" ref="Radio1" id="Radio1"></input>
+                            <label className="form-check-label" htmlfor="Radio1">Post ID</label>
                             
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="RadioOptions" ref="Radio2" id="Radio2"></input>
-                            <label class="form-check-label" for="Radio2">User Name</label>
+                        <div className="form-check">
+                            <input className="form-check-input" type="radio" name="RadioOptions" ref="Radio2" id="Radio2"></input>
+                            <label class="form-check-label" htmlfor="Radio2">User Name</label>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="RadioOptions" ref="Radio3" id="Radio3"></input>
-                            <label class="form-check-label" for="Radio3">Keywords</label>
+                        <div className="form-check">
+                            <input className="form-check-input" type="radio" name="RadioOptions" ref="Radio3" id="Radio3"></input>
+                            <label className="form-check-label" htmlfor="Radio3">Keywords</label>
                         </div>
                     </div>
 
