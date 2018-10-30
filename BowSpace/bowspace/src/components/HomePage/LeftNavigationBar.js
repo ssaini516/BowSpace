@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ErrorMessage from '../ErrorMessage/ErrorMessage.js';
+import Scroll from './Scroll.js';
 
 
 class LeftNavigationBar extends Component {
@@ -191,21 +192,24 @@ class LeftNavigationBar extends Component {
                         {error}
 
                     <ul className ="list-group">
+                        <Scroll>
 
-                        {
-                            listUsers.map(
-                                (user, index) => {
-                                    return <li key={index}
-                                               className="list-group-item"
-                                            >
-                                                <i className="fa fa-user-circle-o"></i> 
-                                                    <span> {user.UserName} </span> 
-                                                <i className="fa fa-circle"></i> 
-                                                    <span> ID: {user.UserId}</span>
-                                            </li>
-                                }
-                            )
-                        }
+                            {
+                                listUsers.map(
+                                    (user, index) => {
+                                        return <li key={index}
+                                                className="list-group-item"
+                                                >
+                                                    <i className="fa fa-user-circle-o"></i> 
+                                                        <span> {user.UserName} </span> 
+                                                    <i className="fa fa-circle"></i> 
+                                                        <span> ID: {user.UserId}</span>
+                                                </li>
+                                    }
+                                )
+                            }
+                            
+                        </Scroll>
 
                     </ul>
                 </div>
