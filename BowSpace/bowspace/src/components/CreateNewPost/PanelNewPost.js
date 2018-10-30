@@ -3,18 +3,23 @@ import { Link } from 'react-router-dom';
 import './Panel-New-Post.css';
 
 class PanelPost extends Component {
+
     constructor(props){
-        super(props)
+
+        super(props);
+
         this.userID = sessionStorage.getItem('loginUsername'); 
 
-        this.CreateNewPost = this.CreateNewPost.bind(this)
+        this.listOfUsersInfo = JSON.parse(sessionStorage.getItem('listOfUsers'));
+
+        this.CreateNewPost = this.CreateNewPost.bind(this);
+
     }
 
     CreateNewPost(){
 
         var userToken = sessionStorage.getItem('loginToken');
         var userID = sessionStorage.getItem('loginUserID');
-        console.log(userID);
 
         // Function to make the postID unique
         var postId = function () {
@@ -38,8 +43,6 @@ class PanelPost extends Component {
             'content-Type': 'application/x-www-form-urlencoded',
             'Authorization': 'Bearer ' + userToken
         })
-
-        console.log(data);
       
         fetch(url, {
             headers: header,
@@ -51,10 +54,13 @@ class PanelPost extends Component {
             .then(res => res.json())
             .then((data) => console.log(data))
             .catch(error => console.log('Error:', error))           
-        }
+    }
 
     
     render(){
+
+        let listUserNamesInfo = this.listOfUsersInfo;
+
         return( 
             <div id="wrapper-panel">
                 <div className="container">
@@ -80,7 +86,18 @@ class PanelPost extends Component {
                                 <div className="input-group-prepend">
                                 <span className="input-group-text"><i className="fa fa-user-plus"></i> Receipient</span>
                                 </div>
-                                <input className="form-control" ref="recipient" required></input>
+                                <select className="form-control" ref="recipient" required>
+                                    {
+                                        listUserNamesInfo.map(
+                                            (userName, index) => {
+                                                return <option key={index} 
+                                                               value={userName.UserId}>
+                                                            {userName.UserName}
+                                                        </option>
+                                            }
+                                        )
+                                    }
+                                </select>
                             </div> 
                         </div>
 
