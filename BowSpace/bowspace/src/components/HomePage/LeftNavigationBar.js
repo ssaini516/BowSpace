@@ -68,8 +68,20 @@ class LeftNavigationBar extends Component {
 
 
     getPostMatchingSearch = (loginToken, searchingPostInput)=> {
-
+        let params = ""
         let url  =  'http://api.bowspace.ca/rest/posts'
+        if(this.refs.Radio1.checked == true)
+        {
+            params = '?postid=0&keywords=' + searchingPostInput; 
+        }
+        else if(this.refs.Radio2.checked == true)
+        {
+            params = '?username=0&keywords=' + searchingPostInput;
+        }
+        else if(this.refs.Radio3.checked == true)
+        {
+            params = '?&keywords=' + searchingPostInput;
+        }
 
         // Build header obj 
         const header = new Headers({
@@ -77,7 +89,6 @@ class LeftNavigationBar extends Component {
             'Authorization': 'Bearer ' + loginToken
         });
 
-        const params = '?senderid=0&keywords=' + searchingPostInput;
 
         // Build request bosy
         let requestBody = {
@@ -155,16 +166,16 @@ class LeftNavigationBar extends Component {
 
                     <div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="RadioOptions" id="Radio1" value="option1"></input>
+                            <input class="form-check-input" type="radio" name="RadioOptions" ref="Radio1" id="Radio1"></input>
                             <label class="form-check-label" for="Radio1">Post ID</label>
                             
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="RadioOptions" id="Radio2" value="option2"></input>
+                            <input class="form-check-input" type="radio" name="RadioOptions" ref="Radio2" id="Radio2"></input>
                             <label class="form-check-label" for="Radio2">User Name</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="RadioOptions" id="Radio3" value="option3"></input>
+                            <input class="form-check-input" type="radio" name="RadioOptions" ref="Radio3" id="Radio3"></input>
                             <label class="form-check-label" for="Radio3">Keywords</label>
                         </div>
                     </div>
