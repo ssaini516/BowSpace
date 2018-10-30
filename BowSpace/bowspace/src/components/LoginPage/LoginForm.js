@@ -90,6 +90,7 @@ class LoginForm extends Component {
                                                   color="white"
                                                   height={50}
                                                   width={50}
+                                                  id="loader"
                                                   id="load-icon"/> : null;
 
         return( 
@@ -128,8 +129,10 @@ class LoginForm extends Component {
                             onClick={this.handleLoginSubmit}>
                         Sign In <i className="fa fa-sign-in" aria-hidden="true"></i>
                     </button>
-                        
-                    {loadingIcon}
+
+                    <div id="loader">    
+                        {loadingIcon}
+                    </div>
                                           
                     <Redirect to={(this.state.isAuthenticated) ? "/home" : "/"} />
                 </form>

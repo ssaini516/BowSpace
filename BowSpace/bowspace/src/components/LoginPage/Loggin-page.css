@@ -46,6 +46,7 @@ img {
     visibility: hidden;
 }
 
-#load-icon {
+#loader{
     text-align: center;
+    margin-top: 10px;
 }
