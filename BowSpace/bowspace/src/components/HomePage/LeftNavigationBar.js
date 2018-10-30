@@ -141,7 +141,7 @@ class LeftNavigationBar extends Component {
 
         return (
             <div className="card">
-                <div className="card-header text-white bg-primary">
+                <div className="card-header text-white" id="panel-color">
                     <h5><i className="fa fa-user-circle-o"></i> {`Welcome ${this.loginedUsername}`}</h5>
                     <button className="btn btn-danger mt-4 btn-sm"
                             onClick={this.handleLogout}>
@@ -157,7 +157,7 @@ class LeftNavigationBar extends Component {
                                 />
                     </div>
 
-                    <button className="btn btn-primary"
+                    <button className="btn btn-primary btn-sm"
                             onClick={this.handleSearchUser}>
                         Search User
                     </button>
@@ -186,7 +186,7 @@ class LeftNavigationBar extends Component {
                             <label className="form-check-label" htmlFor="Radio3">Keywords</label>
                         </div>
                     </div>
-                    <button className="btn btn-primary mt-3"
+                    <button className="btn btn-primary btn-sm mt-3"
                             onClick={this.handleSearchPost}>
                         Search Post
                     </button>

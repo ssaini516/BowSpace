@@ -26,3 +26,8 @@
     color: green;
     text-decoration: underline;
 }
+
+#panel-color{
+    /* background-image: linear-gradient(to bottom, #689eb8, #5b91ac, #4e849f, #417793, #336b87); */
+    background-image: linear-gradient(to right, #2e4db2, #0086c7, #2eb2bc, #a7d5bf, #f4f7eb);
+}
