@@ -148,10 +148,10 @@ class HomePageWrapper extends Component {
     render() {
         
         return(
-            <div id="home-page-wrapper" className="container-fluid mt-3 ml-5">
+            <div id="home-page-wrapper" className="container mt-3 ">
                 {this.hanldeLogout()}
                 <div className="row">
-                    <div className="col-md-4 col-lg-3">
+                    <div className="col-sm-3 col-md-4 col-lg-4">
                         <LeftNavigationBar logoutStatus={this.hanleLogoutClick}
                                            searchUsers={this.handleSearchUser}
                                            listUsers={this.state.listSearchedUsers}
@@ -161,11 +161,11 @@ class HomePageWrapper extends Component {
                         />
                     </div>
 
-                    <div className="col-md-1 col-lg-1">
+                    <div className="col-sm-3 col-md-1 col-lg-1">
                         
                     </div>
 
-                    <div className="col-md-6 col-lg-7">
+                    <div className="col-sm-6 col-md-5 col-lg-7">
                         <ListPostsOfUsers listPosts={this.state.listPosts}
                                           isPostNotFound={this.state.isPostNotFound}
                         />
@@ -173,11 +173,11 @@ class HomePageWrapper extends Component {
                 </div> 
 
                 <div className="row mb-4">
-                    <div className="col-md-9 col-lg-9">
+                    <div className="col-sm-6 col-md-6 col-lg-9">
                         
                     </div>  
 
-                    <div className="col-md-2 col-lg-2 mt-3">
+                    <div className="col-sm-6 col-md-6 col-lg-2 mt-3">
                         <Link to="/createPost">
                             <button className="btn btn-md btn-success btn-lg" id="btn-create-newPost">Create New Post  <i className="fa fa-file-text-o"></i>  </button>
                         </Link>                      
@@ -186,7 +186,7 @@ class HomePageWrapper extends Component {
                 </div>  
 
                 <div className="row">
-                    <div className="col-md-12 col-lg-12">
+                    <div className="col-sm-12 col-md-12 col-lg-12">
                         <Footer />
                     </div>   
                 </div>          

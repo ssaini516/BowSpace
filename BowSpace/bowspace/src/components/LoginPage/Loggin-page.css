@@ -45,3 +45,7 @@ img {
     display: none;
     visibility: hidden;
 }
+
+#load-icon {
+    text-align: center;
+}

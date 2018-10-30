@@ -90,7 +90,7 @@ class LoginForm extends Component {
                                                   color="white"
                                                   height={50}
                                                   width={50}
-                                                  className="loading-icon ml-5"/> : null;
+                                                  id="load-icon"/> : null;
 
         return( 
             <div className="wrapper">
