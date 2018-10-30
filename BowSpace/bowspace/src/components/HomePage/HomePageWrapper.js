@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import LeftNavigationBar from './LeftNavigationBar.js';
 import ListPostsOfUsers from './ListPostsOfUsers.js';
-import Button from '../Button/Button.js';
 import Footer from './Footer.js';
 import './HomePage.css';
 
@@ -58,8 +57,9 @@ class HomePageWrapper extends Component {
     handleSearchPosts = (listMatchingPosts) => {
 
         this.setState({ listPosts: listMatchingPosts });
-        //this.setState({ isPostNotFound: false });     
+            
     }
+
     ///
     /// Render
     ///

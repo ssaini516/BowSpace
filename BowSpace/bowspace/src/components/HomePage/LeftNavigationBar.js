@@ -98,10 +98,7 @@ class LeftNavigationBar extends Component {
 
                 this.props.matchPosts(listMatchingPosts);
 
-            } else {
-                  "user not found";
-                //this.props.foundUser(false);
-            }      
+            }
         })     
     }
     handleSearchPost = () => {

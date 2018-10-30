@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Button from '../Button/Button.js';
 import { Link } from 'react-router-dom';
 import './Panel-New-Post.css';
 
