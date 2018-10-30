@@ -70,16 +70,16 @@ class LeftNavigationBar extends Component {
     getPostMatchingSearch = (loginToken, searchingPostInput)=> {
         let params = ""
         let url  =  'http://api.bowspace.ca/rest/posts'
-        if(this.refs.Radio1.checked == true)
+        if(this.refs.Radio1.checked === true)
         {
             params = '?postid=' + searchingPostInput; 
         }
-        else if(this.refs.Radio2.checked == true)
+        else if(this.refs.Radio2.checked === true)
         {
             params = '?senderid='+ searchingPostInput;
             
         }
-        else if(this.refs.Radio3.checked == true)
+        else if(this.refs.Radio3.checked === true)
         {
             params = '?&keywords=' + searchingPostInput;
         }
@@ -168,16 +168,16 @@ class LeftNavigationBar extends Component {
                     <div>
                         <div className="form-check">
                             <input className="form-check-input" type="radio" name="RadioOptions" ref="Radio1" id="Radio1"></input>
-                            <label className="form-check-label" htmlfor="Radio1">Post ID</label>
+                            <label className="form-check-label" htmlFor="Radio1">Post ID</label>
                             
                         </div>
                         <div className="form-check">
                             <input className="form-check-input" type="radio" name="RadioOptions" ref="Radio2" id="Radio2"></input>
-                            <label class="form-check-label" htmlfor="Radio2">User Name</label>
+                            <label className="form-check-label" htmlFor="Radio2">User Name</label>
                         </div>
                         <div className="form-check">
                             <input className="form-check-input" type="radio" name="RadioOptions" ref="Radio3" id="Radio3"></input>
-                            <label className="form-check-label" htmlfor="Radio3">Keywords</label>
+                            <label className="form-check-label" htmlFor="Radio3">Keywords</label>
                         </div>
                     </div>
 

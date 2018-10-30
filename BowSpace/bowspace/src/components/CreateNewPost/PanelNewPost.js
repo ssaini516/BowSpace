@@ -5,7 +5,7 @@ import './Panel-New-Post.css';
 class PanelPost extends Component {
     constructor(props){
         super(props)
-        this.state ={} 
+        this.userID = sessionStorage.getItem('loginUsername'); 
 
         this.CreateNewPost = this.CreateNewPost.bind(this)
     }
@@ -70,7 +70,7 @@ class PanelPost extends Component {
                                 <div className="input-group-prepend">
                                     <span className="input-group-text"><i className="fa fa-buysellads"></i> Sender</span>
                                 </div>
-                                <input className="form-control" ref="sender" readOnly></input>
+                                <input className="form-control" ref="sender" value={this.userID} readOnly></input>
                             </div>
                         </div>
 
