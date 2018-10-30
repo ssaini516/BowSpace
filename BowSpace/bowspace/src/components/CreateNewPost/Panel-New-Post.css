@@ -1,7 +1,8 @@
 #wrapper-panel{
     border: 0.5 solid black;
     margin: 100px auto;
-    width: 400px;
+    width: 500px;
+    height: 480px;
     background-image: linear-gradient(to bottom, #689eb8, #5b91ac, #4e849f, #417793, #336b87);
 }
 
@@ -9,7 +10,7 @@
 #text-panel{
     font-size: auto ;
     color: aliceblue;
-    margin-left: 3.5rem;
+    margin-left: 7rem;
     margin-top: 2rem;
 }
 
@@ -24,6 +25,7 @@
 #btn-post{
     width: 79px;
     font-size: 17px;
+    margin-left: 52px;
 }
 
 #btn-cancel{

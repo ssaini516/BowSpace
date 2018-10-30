@@ -59,14 +59,14 @@ class PanelPost extends Component {
             <div id="wrapper-panel">
                 <div className="container">
                     <div className="row"> 
-                        <div className="form-group mb-3 col-12">
+                        <div className="form-group mb-4 col-12">
                             <div className="input-group-prepend">
                                 <h3 id="text-panel">BowSpace - create post</h3>
                                 
                             </div>
                         </div>
 
-                        <div className="form-group mb-4 col-12">
+                        <div className="form-group mb-5 col-12">
                             <div className="input-group-prepend">
                                 <div className="input-group-prepend">
                                     <span className="input-group-text"><i className="fa fa-buysellads"></i> Sender</span>
@@ -75,7 +75,7 @@ class PanelPost extends Component {
                             </div>
                         </div>
 
-                        <div className="form-group mb-4 col-12">
+                        <div className="form-group mb-5 col-12">
                             <div className="input-group-prepend">
                                 <div className="input-group-prepend">
                                 <span className="input-group-text"><i className="fa fa-user-plus"></i> Receipient</span>
@@ -84,11 +84,11 @@ class PanelPost extends Component {
                             </div> 
                         </div>
 
-                        <div className="input-group mb-4 col-12">
+                        <div className="input-group mb-5 col-12">
                             <div className="input-group-prepend">
                                 <span className="input-group-text"><i className="fa fa-comments"></i>Post content</span>
                             </div>
-                            <textarea ref="textarea" className="form-control" aria-label="With textarea" required></textarea>
+                            <textarea ref="textarea" className="form-control" aria-label="With textarea" id="textarea" required></textarea>
                         </div>
                     </div>
                     
