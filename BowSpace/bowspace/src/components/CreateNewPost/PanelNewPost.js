@@ -95,9 +95,9 @@ class PanelPost extends Component {
 
                         </div>
                         <div className="col-md-6 mb-3">
-                            <button onClick={this.CreateNewPost} type="submit" className="btn btn-success btn-sm">Post <i className="fa fa-spinner" aria-hidden="true"></i></button>
+                            <a onClick={this.CreateNewPost} type="submit" className="btn btn-success btn-sm" id="btn-post">Post <i className="fa fa-spinner" aria-hidden="true"></i></a>
                             <Link to="/home">
-                                <Button id="btn-cancel" type="danger">Cancel <i className="fa fa-arrow-circle-left" aria-hidden="true"></i></Button>       
+                                <a className="btn btn-danger btn-sm ml-2 mb-2" id="btn-cancel">Cancel <i className="fa fa-arrow-circle-left" aria-hidden="true"></i></a>       
                             </Link>                         
                         </div>                
                     </div>

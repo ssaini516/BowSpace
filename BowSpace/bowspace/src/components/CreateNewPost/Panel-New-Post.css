@@ -20,3 +20,17 @@
 #btn-cancel {
     margin-left: 15px;
 }
+
+#btn-post{
+    color: white;
+    width: 70px;
+    font-size: 18px;
+}
+
+#btn-cancel{
+    color: white;
+    width: 79px;
+    font-size: 17px;
+    height: 36px;
+    padding-top: 6px;
+}
