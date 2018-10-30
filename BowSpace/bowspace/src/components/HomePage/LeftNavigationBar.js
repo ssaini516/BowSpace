@@ -188,7 +188,8 @@ class LeftNavigationBar extends Component {
                                             >
                                                 <i className="fa fa-user-circle-o"></i> 
                                                     <span> {user.UserName} </span> 
-                                                <i className="fa fa-circle"></i>
+                                                <i className="fa fa-circle"></i> 
+                                                    <span> ID: {user.UserId}</span>
                                             </li>
                                 }
                             )
