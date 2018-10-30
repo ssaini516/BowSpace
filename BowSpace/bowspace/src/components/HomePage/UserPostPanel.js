@@ -5,7 +5,7 @@ const UserPostPanel = ({ postId, time, message, recipientName, senderName}) => {
     return(
         <div className="user-post-panel">
             <div className="card mb-4">
-                <div className="card-header">
+                <div className="card-header" id="card-header">
                   <p> Post Id: {postId}</p>               
                 </div>
 
