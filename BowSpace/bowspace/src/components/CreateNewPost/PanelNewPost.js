@@ -88,14 +88,15 @@ class PanelPost extends Component {
                                 </div>
                                 <select className="form-control" ref="recipient" required>
                                     {
-                                        listUserNamesInfo.map(
-                                            (userName, index) => {
-                                                return <option key={index} 
-                                                               value={userName.UserId}>
-                                                            {userName.UserName}
-                                                        </option>
-                                            }
-                                        )
+                                        (listUserNamesInfo) ? 
+                                            listUserNamesInfo.map(
+                                                (userName, index) => {
+                                                    return <option key={index} 
+                                                                value={userName.UserId}>
+                                                                {userName.UserName}
+                                                            </option>
+                                                }
+                                            ) : null
                                     }
                                 </select>
                             </div> 
