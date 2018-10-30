@@ -70,7 +70,7 @@ class LeftNavigationBar extends Component {
     getPostMatchingSearch = (loginToken, searchingPostInput)=> {
         let params = ""
         let url  =  'http://api.bowspace.ca/rest/posts'
-        if(this.refs.Radio1.checked == true)
+        if(this.refs.Radio1.checked === true)
         {
             params = '?postid=0&keywords=' + searchingPostInput; 
         }
@@ -78,7 +78,7 @@ class LeftNavigationBar extends Component {
         {
             params = '?username=0&keywords=' + searchingPostInput;
         }
-        else if(this.refs.Radio3.checked == true)
+        else if(this.refs.Radio3.checked === true)
         {
             params = '?&keywords=' + searchingPostInput;
         }
