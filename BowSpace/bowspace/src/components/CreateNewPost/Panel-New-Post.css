@@ -10,27 +10,22 @@
 #text-panel{
     font-size: auto ;
     color: aliceblue;
-    margin-left: 7rem;
-    margin-top: 2rem;
+    margin-left: 20%;
 }
 
 #textarea{
     height: 100px;
 }
 
-#btn-cancel {
-    margin-left: 15px;
-}
 
 #btn-post{
     width: 79px;
     font-size: 17px;
-    margin-left: 52px;
+    margin-left: 35%;
 }
 
 #btn-cancel{
     width: 79px;
     font-size: 17px;
     height: 36px;
-    padding-top: 4px;
 }
