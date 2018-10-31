@@ -4,34 +4,20 @@ form label{
     margin-top: 10px;
 }
 
-#width1{
-    width: 300px;
-}
-
-#width2{
-    width: 300px;
-}
-
-.login-wrapper {
-    margin: 100px 38%;
+#login-wrapper {
     background-image: linear-gradient(to bottom, #689eb8, #5b91ac, #4e849f, #417793, #336b87);
-    padding: 22px;
-    position: absolute;
+    height: 600px;
+    text-align: center;
 }
 
 img {
     width: 250px;
     height: 200px;
-    margin-left: 40px;
     margin-bottom: 10px;
 }
 
-#btn-login {
-   margin-left: 120px;
-}
-
 #button-log{
-    width: 300px;
+    width: 100%;
 }
 
 .display-warning {
@@ -49,4 +35,8 @@ img {
 #loader{
     text-align: center;
     margin-top: 10px;
+}
+
+.text-align{
+    text-align: left;
 }

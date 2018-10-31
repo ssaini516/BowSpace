@@ -9,12 +9,27 @@ class LoginWrapper extends Component {
     render() {
 
         return (
-            <div className="login-wrapper">
+            <div className="container">
+                <div className="row">
+                
+                    <div className="col-sm-0 col-md-3 col-lg-4">
+                    
+                    </div>
 
-                <ImageLogin />
 
-                <LoginForm />
+                    <div className="col-sm-12 col-md-6 col-lg-4 mt-5" id="login-wrapper">
+                    
 
+                        <ImageLogin />
+
+                        <LoginForm />
+                    </div>
+
+
+                    <div className="col-sm-0 col-md-3 col-lg-4">
+                    
+                    </div>
+                </div>
             </div>
         )
     };

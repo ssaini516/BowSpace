@@ -94,49 +94,48 @@ class LoginForm extends Component {
                                                   /> : null;
 
         return( 
-            <div className="wrapper">
+                <div className="container">
+                    {
+                        (this.state.isInputBlank) ? <div className="display-warning">Username and password cannot be empty</div>
+                        : (this.state.isWrongCredentials) ? <div className="display-warning">Invalid username and password</div>
+                        : <div className="hide-warning"></div>
+                    }
+                    <form>
+                        <div className="form-group" className="text-align">
+                            <label>Email</label>
+                            <input id="width1" 
+                                type="email" 
+                                className="form-control" 
+                                placeholder="Please enter your email" 
+                                ref="username" 
+                                required
+                                />
+                        </div>
 
-                {
-                    (this.state.isInputBlank) ? <div className="display-warning">Username and password cannot be empty</div>
-                    : (this.state.isWrongCredentials) ? <div className="display-warning">Invalid username and password</div>
-                    : <div className="hide-warning"></div>
-                }
+                        <div className="form-group" className="text-align">
+                            <label>Password</label>
+                            <input  
+                                type="password" 
+                                className="form-control" 
+                                placeholder="**********" 
+                                ref="password"
+                                required
+                                />
+                        </div> 
 
-                <form className="container">
-                    <div className="form-group">
-                        <label>Email</label>
-                        <input id="width1" 
-                               type="email" 
-                               className="form-control" 
-                               placeholder="Please enter your email" 
-                               ref="username" 
-                               required
-                               />
-                    </div>
-                    <div className="form-group">
-                        <label>Password</label>
-                        <input id="width2" 
-                               type="password" 
-                               className="form-control" 
-                               placeholder="**********" 
-                               ref="password"
-                               required
-                               />
-                    </div> 
+                        <button id="button-log" 
+                                className="btn btn-success mt-4"
+                                onClick={this.handleLoginSubmit}>
+                            Sign In <i className="fa fa-sign-in" aria-hidden="true"></i>
+                        </button>
 
-                    <button id="button-log" 
-                            className="btn btn-success"
-                            onClick={this.handleLoginSubmit}>
-                        Sign In <i className="fa fa-sign-in" aria-hidden="true"></i>
-                    </button>
-
-                    <div id="loader">    
-                        {loadingIcon}
-                    </div>
-                                          
-                    <Redirect to={(this.state.isAuthenticated) ? "/home" : "/"} />
-                </form>
-            </div>
+                        <div id="loader">    
+                            {loadingIcon}
+                        </div>
+                                            
+                        <Redirect to={(this.state.isAuthenticated) ? "/home" : "/"} />
+                    </form>
+                </div>
         );
     }
 }
