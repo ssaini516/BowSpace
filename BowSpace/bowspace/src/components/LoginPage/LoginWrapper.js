@@ -10,24 +10,26 @@ class LoginWrapper extends Component {
 
         return (
             <div className="container">
-                <div className="row">
-                
-                    <div className="col-sm-0 col-md-3 col-lg-4">
+                <div className="animated rollIn">
+                    <div className="row">
                     
-                    </div>
+                        <div className="col-sm-0 col-md-3 col-lg-4">
+                        
+                        </div>
 
 
-                    <div className="col-sm-12 col-md-6 col-lg-4 mt-5" id="login-wrapper">
-                    
+                        <div className="col-sm-12 col-md-6 col-lg-4 mt-5" id="login-wrapper">
+                        
 
-                        <ImageLogin />
+                            <ImageLogin />
 
-                        <LoginForm />
-                    </div>
+                            <LoginForm />
+                        </div>
 
 
-                    <div className="col-sm-0 col-md-3 col-lg-4">
-                    
+                        <div className="col-sm-0 col-md-3 col-lg-4">
+                        
+                        </div>
                     </div>
                 </div>
             </div>

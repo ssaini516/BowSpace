@@ -63,7 +63,8 @@ class PanelPost extends Component {
 
         return( 
 
-                <div className="container" >                   
+                <div className="container">
+                    <div className="animated flipInY">                  
                      <div className="row"> 
                         <div className="col-sm-0 col-md-0 col-lg-3">
                         </div>
@@ -122,10 +123,9 @@ class PanelPost extends Component {
                         </div>
 
                         <div className="col-sm-0 col-md-0 col-lg-3">
-                        </div>
-                        
+                        </div>         
                     </div>
-                    
+                </div> 
             </div>
             
         );
